@@ -13,8 +13,13 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
+        // 'name ', 'description', 'type','uniqid'
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->string('type');
+            $table->string('uniqid');
             $table->timestamps();
         });
     }

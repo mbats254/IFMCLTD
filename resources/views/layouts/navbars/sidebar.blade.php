@@ -83,6 +83,11 @@
                         <i class="fa fa-gavel text-primary"></i> {{ __('Add Service') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.site.content')}}">
+                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Site Content') }}
+                    </a>
+                </li>
 
                 {{-- 
 

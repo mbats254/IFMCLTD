@@ -13,8 +13,16 @@ class CreateSiteContentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('site_contents', function (Blueprint $table) {
+
+             Schema::create('site_contents', function (Blueprint $table) {
             $table->id();
+            $table->string('company_summary');
+            $table->string('snapshot_array');
+            $table->string('uniqid');
+            $table->string('vision');
+            $table->string('mission');
+            $table->string('innovationn_summary');
+            $table->string('training_program_summary');
             $table->timestamps();
         });
     }

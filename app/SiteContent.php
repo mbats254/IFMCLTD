@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class SiteContent extends Model
 {
     protected $fillable = [
-        'name ', 'uniqid'
+        'company_summary', 'snapshot_array', 'uniqid','vision','mission','innovationn_summary',"training_program_summary"
     ];
 }

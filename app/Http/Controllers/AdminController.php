@@ -3,32 +3,84 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use App\Admin;
+use App\Blog;
+use App\Innovation;
+use App\Product;
+use App\Service;
+use App\SiteContent;
+use App\Team;
+use App\User;
 
 class AdminController extends Controller
 {
     // 
     public function add_product()
     {
-        return view('admin.add_product');
+        $services = Service::get();
+        return view('admin.add_product',compact('services'));
     }
 
-
-    public function judge_project_post(Request $request)
+    
+    public function add_site_content(Request $request)
     {
-        // $grant_application = GrantApplication::where('uniqid','=',$request->uniqid)->get()->first();
-        // // dd($grant_application->id);
-        // for($i=0;$i<sizeof($request->judge);$i++)
-        // $user = User::find($request->judge[$i]);
-        // $project_judge = ProjectJudge::create([
-        //         'email' => $user->email,
-        //         'applicant_id' => $grant_application->id,
-        //         'name' => $user->name,
-        //         'uniqid' => uniqid()
-        //     ]);
-        //     $user->notify(new WelcomeJudge($user,$project_judge,$grant_application));
-        //     Log::info("Judges Posted Sucessfully.");
-        //     $request->session()->flash("success", "Judges Posted Sucessfully!");
-        //     return redirect()->back();
+        return view('admin.add_site_content');
     }
+    public function add_service (Request $request)
+    {
+        return view('admin.add_service');
+    }
+
+    public function post_site_content(Request $request)
+    {
+
+     
+        $site_content = SiteContent::create([
+            'company_summary' => $request->company_summary,
+            'snapshot_array' => $request->snapshot_array,
+            'uniqid' => uniqid(),
+            'vision' => $request->vision,
+            'mission' => $request->mission,
+            'innovationn_summary' => $request->innovationn_summary,
+            'training_program_summary' => $request->training_program_summary
+
+        ]);
+         Log::info("Site Content Posted Sucessfully.");
+            $request->session()->flash("success", "Site Content Posted Sucessfully!");
+            return redirect()->back();
+    }
+    public function post_service(Request $request)
+    {
+        // dd($request->name);
+        $service = Service::create([
+            'name' => $request->name,
+            'service_description' => $request->service_description ,
+            'uniqid' => uniqid()
+     
+            ]);
+            Log::info("Service Posted Sucessfully.");
+            $request->session()->flash("success", "Service Posted Sucessfully!");
+            return redirect()->back();
+    }
+
+    public function post_product(Request $request)
+    {
+        // 'name ', 'description', 'type','uniqid'
+   
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request->description ,
+            'type'=> $request->type ,
+            'uniqid'=> $request->uniqid 
+     
+            ]);
+            //  $user->notify(new WelcomeJudge($user,$product,$product));
+            Log::info("Product Posted Sucessfully.");
+            $request->session()->flash("success", "Product Posted Sucessfully!");
+            return redirect()->back();
+    }
+
+    
 
 }
