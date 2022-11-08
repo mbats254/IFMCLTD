@@ -74,10 +74,21 @@
                                         </span>
                                     @endif
                                 </div>
-                               <div class="form-group{{ $errors->has('innovationn_summary') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('innovationn_summary') }}</label>
+                               <div class="form-group{{ $errors->has('innovation_summary') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="email">{{ __('innovation_summary') }}</label>
 
                                     <textarea type="text" name="innovationn_summary" id="innovationn_summary" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+
+                                    @if ($errors->has('innovationn_summary'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('innovationn_summary') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                               <div class="form-group{{ $errors->has('our_goal') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="email">{{ __('our goal') }}</label>
+
+                                    <textarea type="text" name="our_goal" id="our_goal" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('our_goal') }}" required autofocus></textarea>
 
                                     @if ($errors->has('innovationn_summary'))
                                         <span class="invalid-feedback" role="alert">

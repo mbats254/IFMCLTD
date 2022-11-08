@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Team extends Model
+class Testimonial extends Model
 {
     protected $fillable = [
-        'name', "position", 'bio','photo', 'uniqid'
+        'name', "comment", 'photo', 'uniqid'
     ];
 }

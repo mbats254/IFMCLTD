@@ -288,13 +288,7 @@
                                     <h2>About Us</h2>
                                     <div class="line5"></div> 
                                 <p class="text">
-                                    Mwaura Kennedy Firm was foundend on the year 2014 by Mwaura Kennedy as a result of
-                                    high market
-                                    demand
-                                    for Auditors, Stock Checkers and Tax Calculators. On 2015 Mwaura Kennedy Firm
-                                    managed to
-                                    perfect on
-                                    all three fields as follows:
+                                    {!! $site_content->company_summary !!}
                                 </p>
                                 <div class="right aniright">
                                     <div class="serv-icon si1">
@@ -333,9 +327,8 @@
                             <h2>Our Goal</h2>
                             <div class="line2"></div>
                             <p class="text barbar">
-                            <div class="walai">&#10004;</div> <p class="nviiri">To better our service accuracy and efficiency </p><br>
-                            <div class="walai">&#10004;</div> <p class="nviiri">To better our customer service response</p> <br>
-                            <div class="walai">&#10004;</div><p class="nviiri">To find extra qualified personnel to handle our customer demands</p>
+                            <div class="walai">&#10004;</div> <p class="nviiri">{!! $site_content->our_goal !!} </p><br>
+                           
                             
                             </p>
                         </div>
@@ -344,9 +337,7 @@
                             <h2>Our Vision</h2>
                             <div class="line2"></div>
                             <p class="text ty">
-                                To be the best firm in the world in the eyes of our customers, shareholders, communities
-                                and
-                                people for providing Service Efficiency
+                                {!! $site_content->vision !!}
                             </p>
                         </div>
                         <div class="item-content">
@@ -354,7 +345,7 @@
                             <h2>Our Mission</h2>
                             <div class="line2"></div>
                             <p class="text ty">
-                                To enrich our clients platforms by providing an Honesty, Trustful and Efficient records.
+                                {!! $site_content->mission !!}
                             </p>
                         </div>
 
@@ -376,10 +367,13 @@
                         <div class="price-item anileft">
                             <h2>Audit & Assurance</h2>
                             <ul>
-                                <li><span class="oya">&#10004;</span><br> system audit</li>
-                                <li><span class="oya">&#10004;</span><br>Financial audit</li>
-                                <li><span class="oya">&#10004;</span><br>Operational audit</li>
-                                <li><span class="oya">&#10004;</span><br>Forensic audit</li>
+                                @foreach($services as $service => $values)
+
+                             
+                                <li><span class="oya">&#10004;</span><br>{!!  $values->name !!}</li>
+                    
+
+                                @endforeach
                             </ul>
                             <div class="ptag">
                                 <span>$1400</span>
@@ -401,7 +395,7 @@
                             </div>
 
                         </div>
-                        <div class="price-item aniright">
+                        {{-- <div class="price-item aniright">
                             <h2>Cloud Accounting</h2>
                             <ul>
                                 <li><span class="oya">&#10004;</span><br>Periodic stock count</li>
@@ -414,8 +408,8 @@
                                 <span class="text">Each Monthly</span>
                             </div>
 
-                        </div>
-                        <div class="price-item anileft">
+                        </div> --}}
+                        {{-- <div class="price-item anileft">
                             <h2>Outsourcing Services</h2>
                             <ul>
                                 <li><span class="oya">&#10004;</span><br>Periodic stock count</li>
@@ -428,7 +422,7 @@
                                 <span class="text">Each Monthly</span>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </section>
@@ -454,9 +448,11 @@
                         <p class="text">Our Team</p>
                     </div>
                     <div class="row owl-carousel owl-theme">
+
+                        @foreach($teams as $team => $values)
                         <div class="t-item">
                             <div class="t-img">
-                                <img src="img/401.jpg" alt="">
+                                <img src={!!  $values->photo !!} alt="">
                                 <div class="t-icon">
                                     <a href="" class="center">
                                         <i class="fab fa-facebook-f"></i>
@@ -470,90 +466,12 @@
                                 </div>
                             </div>
                             <div class="t-info">
-                                <h3>Mwaura Kennedy</h3>
-                                <span>Web Developer</span>
+                                <h3>{!! $values->name !!}</h3>
+                                <span>{!! $values->position !!}</span>
                             </div>
                         </div>
-                        <div class="t-item">
-                            <div class="t-img">
-                                <img src="img/18.jpg" alt="">
-                                <div class="t-icon">
-                                    <a href="" class="center">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="t-info">
-                                <h3>Mwaura Kennedy</h3>
-                                <span>Web Developer</span>
-                            </div>
-                        </div>
-                        <div class="t-item">
-                            <div class="t-img">
-                                <img src="img/9.jpg" alt="">
-                                <div class="t-icon">
-                                    <a href="" class="center">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="t-info">
-                                <h3>Mwaura Kennedy</h3>
-                                <span>Web Developer</span>
-                            </div>
-                        </div>
-                        <div class="t-item">
-                            <div class="t-img">
-                                <img src="img/77.jpg" alt="">
-                                <div class="t-icon">
-                                    <a href="" class="center">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="t-info">
-                                <h3>Mwaura Kennedy</h3>
-                                <span>Web Developer</span>
-                            </div>
-                        </div>
-                        <div class="t-item">
-                            <div class="t-img">
-                                <img src="img/1.jpg" alt="">
-                                <div class="t-icon">
-                                    <a href="" class="center">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="" class="center">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="t-info">
-                                <h3>Mwaura Kennedy</h3>
-                                <span>Web Developer</span>
-                            </div>
-                        </div>
+                        @endforeach
+                     
 
 
                     </div>

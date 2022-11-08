@@ -93,6 +93,11 @@
                         <i class="fa fa-list text-primary"></i> {{ __('Add Team Member') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.testimonial') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('Add Testimonial') }}
+                    </a>
+                </li>
                 {{-- 
 
                
