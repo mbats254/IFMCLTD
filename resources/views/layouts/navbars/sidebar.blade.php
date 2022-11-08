@@ -88,14 +88,14 @@
                         <i class="fa fa-gavel text-primary"></i> {{ __('Add Site Content') }}
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.team.member') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('Add Team Member') }}
+                    </a>
+                </li>
                 {{-- 
 
-                <li class="nav-item">
-                        <a class="nav-link" href="{{ route('add.category') }}">
-                            <i class="fa fa-list text-primary"></i> {{ __('Add Category') }}
-                        </a>
-                    </li>
+               
                 <li class="nav-item">
                         <a class="nav-link" href="{{ route('add.menu.item') }}">
                             <i class="fa fa-clipboard text-primary"></i> {{ __('Add Menu Item') }}

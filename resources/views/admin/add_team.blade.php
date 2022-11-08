@@ -34,7 +34,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <form method="post" action="{{ route('post.service') }}" enctype="multipart/form-data" autocomplete="off">
+                        <form method="post" action="{{ route('post.team.member') }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
 
                             <h6 class="heading-small text-muted mb-4">{{ __('Collect Team`s information') }}</h6>

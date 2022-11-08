@@ -72,7 +72,7 @@ class AdminController extends Controller
             'name' => $request->name,
             'description' => $request->description ,
             'type'=> $request->type ,
-            'uniqid'=> $request->uniqid 
+            'uniqid'=> uniqid()
      
             ]);
             //  $user->notify(new WelcomeJudge($user,$product,$product));
