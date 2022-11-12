@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head>  
     <title> IFMCLTD</title>
     <link rel="stylesheet" type="text/css" href="/css/97.css">
     <link rel="stylesheet" type="text/css" href="/fontawesome/css/all.min.css">
@@ -452,7 +452,7 @@
                         @foreach($teams as $team => $values)
                         <div class="t-item">
                             <div class="t-img">
-                                <img src={!!  $values->photo !!} alt="">
+                                <img src={!! $values->photo !!} alt="">
                                 <div class="t-icon">
                                     <a href="" class="center">
                                         <i class="fab fa-facebook-f"></i>

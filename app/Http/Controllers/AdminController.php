@@ -13,6 +13,7 @@ use App\SiteContent;
 use App\Team;
 use App\User;
 use App\Testimonial;
+use Illuminate\Support\Facades\Schema;
 
 class AdminController extends Controller
 {
@@ -128,6 +129,97 @@ class AdminController extends Controller
     public function add_testimonial(Request $request)
     {
         return view('admin.add_new_testimonal');
+    }
+
+    public function all_product(Request $request)
+    {
+        $products = Product::all();
+        return view('admin.all_products',compact('products'));
+        // dd($products);
+    }
+
+    public function edit_product(Request $request)
+    {
+        $product = Product::where('uniqid','=',$request->uniqid)->get()->first();
+        return view('admin.edit_product',compact('product'));
+        dd($product);
+    }
+
+    public function post_edit_product(Request $request)
+    {
+        $product = Product::where('uniqid','=',$request->uniqid)->get()->first();
+        $fields =  Schema::getColumnListing($product->getTable());
+        // dd($fields[0]);
+
+        for ($i=0;$i<sizeof($fields);$i++) {
+            $this_field = $fields[$i];
+            if ($product->$this_field !== null && $request->$this_field !== null) {
+                Product::where('uniqid','=',$request->uniqid)->update([
+                    $this_field => $request->$this_field
+                ]);
+
+               }
+        }
+        Log::info( $product->name."'s Updated Sucessfully!");
+        $request->session()->flash("success", $product->name."'s Updated Sucessfully!");
+        return redirect()->back();
+    }
+
+    public function delete_product(Request $request)
+    {
+        $product = Product::where('uniqid','=',$request->uniqid)->get()->first();
+        $product->delete();
+        Log::info( $product->name."'s Deleted Sucessfully!");
+        $request->session()->flash("success", $product->name."'s Deleted Sucessfully!");
+        return redirect()->back();
+    }
+
+    public function all_services (Request $request)
+    {
+
+        $services = Service::get();
+        return view('admin.all_services', compact('services'));
+        // dd($services);
+    }
+
+
+    public function edit_service(Request $request)
+    {
+
+        $service = Service::where('uniqid','=',$request->uniqid)->get()->first();
+        return view('admin.edit_service',compact('service'));
+        dd($service);
+    }
+
+    public function post_edit_service(Request $request)
+    {
+        $service = Service::where('uniqid','=',$request->uniqid)->get()->first();
+        $fields =  Schema::getColumnListing($service->getTable());
+        // dd($fields[0]);
+
+        for ($i=0;$i<sizeof($fields);$i++) {
+            $this_field = $fields[$i];
+            if ($service->$this_field !== null && $request->$this_field !== null)
+             {
+                Service::where('uniqid','=',$request->uniqid)->update([
+                    $this_field => $request->$this_field
+                ]);
+
+               }
+        }
+        Log::info( $service->name."'s Updated Sucessfully!");
+        $request->session()->flash("success", $service->name."'s Updated Sucessfully!");
+        return redirect()->back();
+    }
+
+    public function delete_service(Request $request)
+    {
+
+        $product = Service::where('uniqid','=',$request->uniqid)->get()->first();
+        $product->delete();
+        Log::info( $product->name."'s Deleted Sucessfully!");
+        $request->session()->flash("success", $product->name."'s Deleted Sucessfully!");
+        return redirect()->back();
     }
     
 

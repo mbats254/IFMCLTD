@@ -98,6 +98,16 @@
                         <i class="fa fa-list text-primary"></i> {{ __('Add Testimonial') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.products') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Products') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.services') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Services') }}
+                    </a>
+                </li>
                 {{-- 
 
                
