@@ -73,77 +73,54 @@
                     </a>
                 </li>
 
+              
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('all.orders')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('All Orders') }}
+                    <a class="nav-link" href="{{route('add.product')}}">
+                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Product') }}
                     </a>
                 </li>
-
                 <li class="nav-item">
-                        <a class="nav-link" href="{{ route('add.category') }}">
-                            <i class="fa fa-list text-primary"></i> {{ __('Add Category') }}
-                        </a>
-                    </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="{{ route('add.menu.item') }}">
-                            <i class="fa fa-clipboard text-primary"></i> {{ __('Add Menu Item') }}
-                        </a>
+                    <a class="nav-link" href="{{route('add.service')}}">
+                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Service') }}
+                    </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.faq')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add FAQ') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.site.content')}}">
+                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Site Content') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.team.member') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('Add Team Member') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.testimonial') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('Add Testimonial') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.products') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Products') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.services') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Services') }}
+                    </a>
+                </li>
+                
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('all.products')}}">
                         <i class="fa fa-shopping-cart text-primary"></i> {{ __('All Products') }}
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('all.categories')}}">
-                        <i class="fa fa-ellipsis-v text-primary"></i> {{ __('All Categories') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('all.slider.photos')}}">
-                        <i class="fa fa-sliders-h text-primary"></i> {{ __('All Slider Photos') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('about.us.details')}}">
-                        <i class="fa fa-book text-primary"></i> {{ __('Edit About Us') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('add.locations')}}">
-                        <i class="fa fa-map-marker text-primary"></i> {{ __('Add Delivery Locations') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('team.input')}}">
-                        <i class="fa fa-user text-primary"></i> {{ __('Team Input') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('newsletter.input')}}">
-                        <i class="fa fa-envelope text-primary"></i> {{ __('Newsletter Input') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('add.menu.download')}}">
-                        <i class="fa fa-file text-primary"></i> {{ __('Menu File Upload') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('all.reservations')}}">
-                        <i class="fa fa-book text-primary"></i> {{ __('All Reservations') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('add.slider')}}">
-                        <i class="fa fa-sliders-h text-primary"></i> {{ __('Add Slider Photo') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('all.customer.feedback')}}">
-                        <i class="fa fa-volume-up text-primary"></i> {{ __('All Customer Feedback') }}
-                    </a>
-                </li>
+                </li> --}}
+               
 
             </ul>
                @endif

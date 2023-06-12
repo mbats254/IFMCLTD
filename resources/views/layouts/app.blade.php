@@ -7,7 +7,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Taste of Manhattan</title>
+        <title>IFMCLTD</title>
         <!-- Favicon -->
         <link href="/argon/img/brand/favicon.png" rel="icon" type="image/png">
         <!-- Fonts -->
