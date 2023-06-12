@@ -18,16 +18,14 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/', 'WelcomeController@welcome'])->name('welcome');
 Auth::routes();
-
+Route::group(['middleware' => ['auth']], function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/add/product', [App\Http\Controllers\AdminController::class, 'add_product'])->name('add.product');
 Route::get('/add/category', [App\Http\Controllers\AdminController::class, 'add_category'])->name('add.category');
@@ -51,3 +49,13 @@ Route::get('/add/team/member', [App\Http\Controllers\AdminController::class,'add
 Route::post('/post/team/member', [App\Http\Controllers\AdminController::class,'post_team_member'])->name('post.team.member');
 Route::post('/post/service', [App\Http\Controllers\AdminController::class,'post_service'])->name('post.service');
 Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'post_testimonial'])->name('post.testimonial');
+});
+
+// Site Routes
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/about', [App\Http\Controllers\SiteController::class,'about_us'])->name('about.us');
+Route::get('/contact/us', [App\Http\Controllers\SiteController::class,'contact_us'])->name('contact.us');
+Route::get('/our/services', [App\Http\Controllers\SiteController::class,'our_services'])->name('our.services');
