@@ -112,7 +112,7 @@
                 <i class="fas fa-times"></i>
             </a>
             <div class="lyt-txt">
-                <h class="title-vid">&#127909; Recorded Activies &#127911;</h>
+                <h3 class="title-vid">&#127909; Recorded Activies &#127911;</h3>
             </div>
 
         </div>
@@ -121,25 +121,25 @@
             <div class="main-video">
                 <div class="video1">
                     <video src="/video/1.mp4" height="100%" width="100%" controls muted autoplay loop></video> <br>
-                    <h class="vid-name">IFMCLTD Animation 1 &#127867;</h>
+                    <h3 class="vid-name">IFMCLTD Animation 1 &#127867;</h3>
                 </div>
             </div>
             <div class="v-list">
                 <div class="vid-track fyeah currentF">
                     <video src="/video/1.mp4" height="100%" width="100%" muted></video>
-                    <h class="vid-name">IFMCLTD Animation 1 &#127867;</h>
+                    <h3 class="vid-name">IFMCLTD Animation 1 &#127867;</h3>
                 </div>
                 <div class="vid-track">
                     <video src="/video/2.mp4" height="100%" width="100%" muted></video>
-                    <h class="vid-name">IFMCLTD Animation 2 &#128522;</h>
+                    <h3 class="vid-name">IFMCLTD Animation 2 &#128522;</h3>
                 </div>
                 <div class="vid-track">
                     <video src="/video/3.mp4" height="100%" width="100%" muted></video>
-                    <h class="vid-name">IFMCLTD Animation 3 &#127949;</h>
+                    <h3 class="vid-name">IFMCLTD Animation 3 &#127949;</h3>
                 </div>
                 <div class="vid-track">
                     <video src="/video/4.mp4" height="100%" width="100%" muted></video>
-                    <h class="vid-name">IFMCLTD Animation 4 &#128120;</h>
+                    <h3 class="vid-name">IFMCLTD Animation 4 &#128120;</h3>
                 </div>
 
             </div>
