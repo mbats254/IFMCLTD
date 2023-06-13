@@ -85,9 +85,9 @@
  <!--loader-->
  <div class="loader_all" id="loader_all">
         <div class="l_any">
-            @foreach($loadas as $l)
-            <img src="/uploads/{{$l->img}}" alt="">
-            @endforeach
+            
+            <img src="/img/lder/l3.gif" alt="">
+            
         </div>
     </div>
     <!--chat-->
