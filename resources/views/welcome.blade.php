@@ -227,7 +227,7 @@
                 <div class="tittle">
                     <div class="aboutstart">
                     
-                        <div class="divai"><img src="/img/homeimg/nowhere2.jpg" alt=""></div>
+                        <div class="divai"><img src="/img/homeimg/nowhere2.jpeg" alt=""></div>
                         <div class="abouti">
                             <h2>About Us</h2>
                             <div class="line5"></div> 
