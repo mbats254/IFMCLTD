@@ -53,9 +53,8 @@ Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'p
 
 // Site Routes
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\SiteController::class,'welcome'])->name('Welcome.us');
+
 Route::get('/about', [App\Http\Controllers\SiteController::class,'about_us'])->name('about.us');
 Route::get('/contact/us', [App\Http\Controllers\SiteController::class,'contact_us'])->name('contact.us');
-Route::get('/our/services', [App\Http\Controllers\SiteController::class,'our_services'])->name('our.services');
+Route::get('/service', [App\Http\Controllers\SiteController::class,'our_services'])->name('our.services');
