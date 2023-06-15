@@ -2592,10 +2592,20 @@ align-items: flex-start;
 @media screen and (max-width:420px){
     .st .full-slider-box{
         margin-top:15px ;
-        min-height: 30vh;
+        min-height: 35vh;
     }
     .sufuri{
         font-size: 10px;  
+    }
+    .feature .aboutstart .divai img {
+        height: 250px;
+    }
+    .feature .abouti .right {
+        display: flex;
+        flex-direction: column;  
+    }
+    .feature .abouti .right .serv-icon {
+        margin-top: 30px;
     }
 }
 @media screen and (max-width:408px){
@@ -2622,9 +2632,6 @@ align-items: flex-start;
 }
 
 @media screen and (max-width:611px){
-    .full-slider-box{
-        min-height: 65vh;
-    }
    
     .sufuri .f-slider-text strong{
         font-size: 30%;
@@ -2638,6 +2645,11 @@ align-items: flex-start;
         top: -180px;
     }
     
+}
+@media screen and (max-width:690px){
+    .full-slider-box{
+        min-height: 50vh;
+    }
 }
 @media screen and (max-width:768px){
       .wabebe .f-slider-text span{
@@ -2975,3 +2987,9 @@ align-items: flex-start;
     display:none;
    }
 }
+@media screen and (max-width:1030px){
+    .feature .abouti .right {
+        gap: .7rem;
+        
+    }
+ }
