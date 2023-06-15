@@ -58,3 +58,4 @@ Route::get('/', [App\Http\Controllers\SiteController::class,'welcome'])->name('W
 Route::get('/about', [App\Http\Controllers\SiteController::class,'about_us'])->name('about.us');
 Route::get('/contact/us', [App\Http\Controllers\SiteController::class,'contact_us'])->name('contact.us');
 Route::get('/service', [App\Http\Controllers\SiteController::class,'our_services'])->name('our.services');
+Route::get('/single/service/{uniqid}', [App\Http\Controllers\SiteController::class,'single_service'])->name('single.service');
