@@ -1,11 +1,6 @@
 @extends('sites_files.footers')
 @section('content')
- <!--loader-->
- <div class="loader_all" id="loader_all">
-        <div class="l_any">
-            <img src="/img/lder/l3.gif" alt="">
-        </div>
-    </div>
+
     <!--chat-->
     {{-- <div class="online_chat">
         <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>

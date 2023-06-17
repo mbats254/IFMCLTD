@@ -48,6 +48,44 @@
                                     @endif
                                 </div>
 
+                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="email">{{ __('Descriptional Listing(Title)') }}</label>
+
+                                    <textarea type="text" name="descriptional_listing" id="descriptional_listing" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                               <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="email">{{ __('List Item Description') }}</label>
+
+                                    <textarea type="text" name="list_item_description" id="list_item_description" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                               <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="email">{{ __('How can Help') }}</label>
+
+                                    <textarea type="text" name="how_we_can_help" id="how_we_can_help" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                               
+
+                                
+
 
 
                                     <input type="submit" class="btn btn-success mt-4" value="Submit">

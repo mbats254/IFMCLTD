@@ -1,8 +1,8 @@
 
-@extends('layouts.app', ['title' => __('Service Management')])
+@extends('layouts.app', ['title' => __('Snapshot Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Add New Service')])
+    @include('users.partials.header', ['title' => __('Add New Snapshot')])
     <style type="text/css">
         .ck-editor__editable_inline {
             min-height: 500px;
@@ -16,7 +16,7 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Services Management') }}</h3>
+                                <h3 class="mb-0">{{ __('Snapshots Management') }}</h3>
                             </div>
                             <div class="col-4 text-right">
                                 {{-- @if($refer !== null) --}}
@@ -33,14 +33,14 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <form method="post" action="{{ route('post.service') }}" enctype="multipart/form-data" autocomplete="off">
+                        <form method="post" action="{{ route('post.Snapshot') }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('Collect Services information') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Collect Snapshots information') }}</h6>
 
                             <div class="pl-lg-4">
                                <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="title">{{ __('Service`s Name') }}</label>
+                                    <label class="form-control-label" for="title">{{ __('Snapshot`s title') }}</label>
 
                                     <input type="text" name="name" id="name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('name') }}" required autofocus>
 
@@ -53,9 +53,9 @@
 
 
                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('Service`s Description') }}</label>
+                                    <label class="form-control-label" for="email">{{ __('Snapshot`s Description') }}</label>
 
-                                    <textarea type="text" name="service_description" id="service_description" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="Snapshot_description" id="Snapshot_description" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
