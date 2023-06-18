@@ -33,36 +33,49 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <form method="post" action="{{ route('post.Snapshot') }}" enctype="multipart/form-data" autocomplete="off">
+                        <form method="post" action="{{ route('post.snapshot') }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
 
                             <h6 class="heading-small text-muted mb-4">{{ __('Collect Snapshots information') }}</h6>
 
                             <div class="pl-lg-4">
                                <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
+                                
                                     <label class="form-control-label" for="title">{{ __('Snapshot`s title') }}</label>
 
-                                    <input type="text" name="name" id="name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('name') }}" required autofocus>
+                                    <input type="text" name="title" id="title" class="form-control form-control-alternative{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('title') }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('title') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                               <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
+                             
+                                    <label class="form-control-label" for="title">{{ __('Snapshot`s accompanying Text') }}</label>
+
+                                    <input type="text" name="accompanying_text" id="accompanying_text" class="form-control form-control-alternative{{ $errors->has('accompanying_text') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('accompanying_text') }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('accompanying_text') }}</strong>
                                         </span>
                                     @endif
                                 </div>
 
+                                <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="bio">{{ __('Backdrop Image') }}</label>
 
-                               <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('Snapshot`s Description') }}</label>
-
-                                    <textarea type="text" name="Snapshot_description" id="Snapshot_description" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <input type="file" name="backdropImage" id="backdropImage" class="form-control form-control-alternative{{ $errors->has('backdropImage') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('backdropImage') }}" required autofocus/>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('backdropImage') }}</strong>
                                         </span>
                                     @endif
                                 </div>
+                               
                           
                                     
 

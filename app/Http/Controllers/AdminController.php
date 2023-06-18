@@ -14,6 +14,7 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Testimonial;
 use App\Models\FAQ;
+use App\Models\Snapshot;
 use Illuminate\Support\Facades\Schema;
 
 class AdminController extends Controller
@@ -23,6 +24,11 @@ class AdminController extends Controller
     {
         $services = Service::get();
         return view('admin.add_product',compact('services'));
+    }
+
+    public function add_snap_shot()
+    {        
+        return view('admin.add_snapshot');
     }
 
     
@@ -51,7 +57,7 @@ class AdminController extends Controller
 
         ]);
          Log::info("Site Content Posted Sucessfully.");
-            // $request->session()->flash("success", "Site Content Posted Sucessfully!");
+            $request->session()->flash("success", "Site Content Posted Sucessfully!");
             return redirect()->back();
     }
     public function post_service(Request $request)
@@ -64,7 +70,7 @@ class AdminController extends Controller
      
             ]);
             Log::info("Service Posted Sucessfully.");
-            // $request->session()->flash("success", "Service Posted Sucessfully!");
+            $request->session()->flash("success", "Service Posted Sucessfully!");
             return redirect()->back();
     }
 
@@ -81,7 +87,7 @@ class AdminController extends Controller
             ]);
             //  $user->notify(new WelcomeJudge($user,$product,$product));
             Log::info("Product Posted Sucessfully.");
-            // $request->session()->flash("success", "Product Posted Sucessfully!");
+            $request->session()->flash("success", "Product Posted Sucessfully!");
             return redirect()->back();
     }
 
@@ -107,7 +113,7 @@ class AdminController extends Controller
             ]);
             //  $user->notify(new WelcomeJudge($user,$product,$product));
             Log::info( $team_member->name." Posted Sucessfully!");
-            // $request->session()->flash("success", $team_member->name." Posted Sucessfully!");
+            $request->session()->flash("success", $team_member->name." Posted Sucessfully!");
             return redirect()->back();
     }
 
@@ -124,7 +130,7 @@ class AdminController extends Controller
         ]);
 
         Log::info( $testimonial->name."'s Posted Sucessfully!");
-        // $request->session()->flash("success", $testimonial->name."'s Posted Sucessfully!");
+        $request->session()->flash("success", $testimonial->name."'s Posted Sucessfully!");
         return redirect()->back();
     }
 
@@ -163,7 +169,7 @@ class AdminController extends Controller
                }
         }
         Log::info( $product->name."'s Updated Sucessfully!");
-        // $request->session()->flash("success", $product->name."'s Updated Sucessfully!");
+        $request->session()->flash("success", $product->name."'s Updated Sucessfully!");
         return redirect()->back();
     }
 
@@ -172,7 +178,7 @@ class AdminController extends Controller
         $product = Product::where('uniqid','=',$request->uniqid)->get()->first();
         $product->delete();
         Log::info( $product->name."'s Deleted Sucessfully!");
-        // $request->session()->flash("success", $product->name."'s Deleted Sucessfully!");
+        $request->session()->flash("success", $product->name."'s Deleted Sucessfully!");
         return redirect()->back();
     }
 
@@ -210,7 +216,7 @@ class AdminController extends Controller
                }
         }
         Log::info( $service->name."'s Updated Sucessfully!");
-        // $request->session()->flash("success", $service->name."'s Updated Sucessfully!");
+        $request->session()->flash("success", $service->name."'s Updated Sucessfully!");
         return redirect()->back();
     }
 
@@ -220,7 +226,7 @@ class AdminController extends Controller
         $product = Service::where('uniqid','=',$request->uniqid)->get()->first();
         $product->delete();
         Log::info( $product->name."'s Deleted Sucessfully!");
-        // $request->session()->flash("success", $product->name."'s Deleted Sucessfully!");
+        $request->session()->flash("success", $product->name."'s Deleted Sucessfully!");
         return redirect()->back();
     }
 
@@ -239,8 +245,26 @@ class AdminController extends Controller
     ]);
 
     Log::info( $faq->question."'s Posted Sucessfully!");
-    // $request->session()->flash("success", $faq->question."'s Posted Sucessfully!");
+    $request->session()->flash("success", $faq->question."'s Posted Sucessfully!");
     return redirect()->back();
+    }
+
+    public function post_snapshot(request $request)
+    {
+        $photo = $request->file('backdropImage');
+        $uniqid = uniqid();
+        $request->file('backdropImage')->move(base_path() . '/public/images/', $file_name = str_replace(" ", "_", '/images/'.$request->title . $uniqid) . "." . $photo->getClientOriginalExtension());
+        $snapshot = Snapshot::create([
+                'title' => $request->title,        
+                'backdropImage' => $file_name,
+                'accompanying_text'=> $request->accompanying_text,
+                'uniqid'=> $uniqid
+        ]);
+
+        Log::info( $snapshot->name."'s Posted Sucessfully!");
+        $request->session()->flash("success", $snapshot->title."'s Posted Sucessfully!");
+        return redirect()->back();
+        
     }
     
 

@@ -76,12 +76,17 @@
               
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.product')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Product') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Product') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.service')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Service') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Service') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.snap.shot')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Snapshot') }}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -91,7 +96,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.site.content')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Site Content') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Site Content') }}
                     </a>
                 </li>
                 <li class="nav-item">

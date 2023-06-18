@@ -38,8 +38,11 @@ Route::get('/admin/delete/product/{uniqid}', [App\Http\Controllers\AdminControll
 Route::get('/admin/delete/service/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_service'])->name('delete.service');
 Route::get('/add/testimonial', [App\Http\Controllers\AdminController::class,'add_testimonial'])->name('add.testimonial');
 Route::post('/post/product', [App\Http\Controllers\AdminController::class,'post_product'])->name('post.product');
+Route::post('/post/snapshot', [App\Http\Controllers\AdminController::class,'post_snapshot'])->name('post.snapshot');
+// Route::get('/add/snapshot', [App\Http\Controllers\AdminController::class,'add_snapshot'])->name('add.snapshot');
 Route::get('/add/service', [App\Http\Controllers\AdminController::class,'add_service'])->name('add.service');
 Route::get('/add/site/content', [App\Http\Controllers\AdminController::class,'add_site_content'])->name('add.site.content');
+Route::get('/add/snap/shot', [App\Http\Controllers\AdminController::class,'add_snap_shot'])->name('add.snap.shot');
 Route::post('/post/site/content', [App\Http\Controllers\AdminController::class,'post_site_content'])->name('post.site_content');
 Route::post('/post/edit/product', [App\Http\Controllers\AdminController::class,'post_edit_product'])->name('post.edit.product');
 Route::post('/post/edit/service', [App\Http\Controllers\AdminController::class,'post_edit_service'])->name('post.edit.service');
