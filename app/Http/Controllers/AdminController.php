@@ -44,18 +44,19 @@ class AdminController extends Controller
 
     public function post_site_content(Request $request)
     {
+        // dd($request->all());
+        $request['uniqid'] = uniqid();
+        $site_content = SiteContent::create($request->all());
+        dd($site_content);
+        // $site_content = SiteContent::create([
+           
+        //     'uniqid' => uniqid(),
+        //     'vision' => $request->vision,
+        //     'mission' => $request->mission,
+        //     'innovationn_summary' => $request->innovationn_summary,
+        //     'training_program_summary' => $request->training_program_summary
 
-     
-        $site_content = SiteContent::create([
-            'company_summary' => $request->company_summary,
-            'snapshot_array' => $request->snapshot_array,
-            'uniqid' => uniqid(),
-            'vision' => $request->vision,
-            'mission' => $request->mission,
-            'innovationn_summary' => $request->innovationn_summary,
-            'training_program_summary' => $request->training_program_summary
-
-        ]);
+        // ]);
          Log::info("Site Content Posted Sucessfully.");
             $request->session()->flash("success", "Site Content Posted Sucessfully!");
             return redirect()->back();
