@@ -45,7 +45,7 @@
                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('vision') }}</label>
 
-                                    <textarea type="text" name="vision" id="vision" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="vision" id="vision" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}"  required autofocus>{!!  $site_content->vision !!}</textarea>
 
                                     @if ($errors->has('vision'))
                                         <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
                                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('mission') }}</label>
 
-                                    <textarea type="text" name="mission" id="mission" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="mission" id="mission" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->mission }}</textarea>
 
                                     @if ($errors->has('mission'))
                                         <span class="invalid-feedback" role="alert">
@@ -68,7 +68,7 @@
                                <div class="form-group{{ $errors->has('our_goal') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('our goal') }}</label>
 
-                                    <textarea type="text" name="our_goal" id="our_goal" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('our_goal') }}" required autofocus></textarea>
+                                    <textarea type="text" name="our_goal" id="our_goal" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->our_goal }}</textarea>
 
                                     @if ($errors->has('innovationn_summary'))
                                         <span class="invalid-feedback" role="alert">
@@ -78,9 +78,9 @@
                                 </div>
                                 
                                <div class="form-group{{ $errors->has('about_home_paragraph') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('about_home_paragraph') }}</label>
+                                    <label class="form-control-label" for="email">{{ __('About Home Paragraph') }}</label>
 
-                                    <textarea type="text" name="about_home_paragraph" id="about_home_paragraph" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="about_home_paragraph" id="about_home_paragraph" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->about_home_paragraph }}</textarea>
 
                                     @if ($errors->has('about_home_paragraph'))
                                         <span class="invalid-feedback" role="alert">
@@ -89,9 +89,9 @@
                                     @endif
                                 </div>
                                <div class="form-group{{ $errors->has('about_us') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('about_us') }}</label>
+                                    <label class="form-control-label" for="about_us">{{ __('about_us') }}</label>
 
-                                    <textarea type="file" multiple name="about_us" id="about_us" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="file" multiple name="about_us" id="about_us" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->about_us }}</textarea>
 
                                     @if ($errors->has('about_us'))
                                         <span class="invalid-feedback" role="alert">

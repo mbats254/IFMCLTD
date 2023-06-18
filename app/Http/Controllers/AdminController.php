@@ -34,7 +34,8 @@ class AdminController extends Controller
     
     public function add_site_content(Request $request)
     {
-        $site_content = SiteContent::get();
+        $site_content = SiteContent::orderBy('id','desc')->get()->first();
+        // dd($site_content->vision);
         return view('admin.add_site_content',compact('site_content'));
     }
     public function add_service (Request $request)
