@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\ContactInformation;
 use App\Models\ContactUs;
 use App\Models\Snapshot;
+use App\Models\Admin;
 use App\Models\Team;
 use App\Models\FAQ;
 use App\Models\Testimonial;
@@ -78,8 +79,14 @@ class SiteController extends Controller
             'message' => $request->message,
             'subject' => $request->subject
         ]);
-        Log::info( $contact_us->name."'s Deleted Sucessfully!");
-        $request->session()->flash("success", $contact_us->name."'s Deleted Sucessfully!");
+        $alladmins = Admin::get();
+        for($i=0;$i<sizeof($alladmins);$i++)
+        {
+            $alladmins[$i]->notify(new ContactUsIFMCLTD($alladmins[$i],$contact_us));
+        }
+        // $contact_us
+        Log::info( $contact_us->name."'s Added Sucessfully!");
+        $request->session()->flash("success", $contact_us->name."'s Added Sucessfully!");
         return redirect()->back();
         // dd($contact_us);
     }

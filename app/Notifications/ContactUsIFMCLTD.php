@@ -6,19 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\HtmlString;
 
 class ContactUsIFMCLTD extends Notification
 {
     use Queueable;
-
+    protected $admin;
+    protected $contact_us;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($admin, $contact_us)
     {
-        //
+        $this->contact_us = $contact_us;
+        $this->admin = $admin;
     }
 
     /**
@@ -41,8 +44,11 @@ class ContactUsIFMCLTD extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello '.$this->admin->name)
+                    ->line(new HtmlString('A contact notification from <a href=mailto:'.$this->contact_us->email.'>'.$this->contact_us->name.'</a>'))
+                    ->line(new HtmlString('Subject: <b>'.$this->contact_us->subject.'</b>'))
+                    ->line(new HtmlString('Message: <b>'.$this->contact_us->message.'</b>'))
+                    // ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
 
