@@ -7,6 +7,8 @@ use App\Models\SiteContent;
 use App\Models\Service;
 use App\Models\ContactInformation;
 use App\Models\Snapshot;
+use App\Models\Team;
+use App\Models\FAQ;
 
 class SiteController extends Controller
 {
@@ -17,7 +19,10 @@ class SiteController extends Controller
         // dd($site_content['about_home_paragraph']);
         $services = Service::get();
         $snapshots = Snapshot::get();
-        return view('sites_files.welcome',compact('site_content','services','snapshots'));
+        $team_members = Team::get();
+        $faqs = FAQ::where('question' ,'=!', '')->get();
+        $suggestion_complain_question = FAQ::where('suggestion_complain_question' ,'=!', '')->get();
+        return view('sites_files.welcome',compact('suggestion_complain_question','faqs','team_members','site_content','services','snapshots'));
     }
     public function about_us(Request $request)
     {
@@ -43,5 +48,10 @@ class SiteController extends Controller
         dd($single_sevice);
         return view('sites_files.services_single',compact('single_service'));
         
+    }
+
+    public function post_suggestion_complain_question(Request $request)
+    {
+        $suggestion_complain_question = $request->suggestion_complain_question;
     }
 }

@@ -227,7 +227,7 @@
                             <a href="{!! $values->facebook !!}" class="center"  style="text-decoration: none;">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href={!! $values->twitter</a> !!} class="center"  style="text-decoration: none;">
+                            < href={!! $values->twitter !!} class="center"  style="text-decoration: none;">
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href={!! $values->instagram !!}  class="center"  style="text-decoration: none;">
@@ -260,6 +260,8 @@
             
             </div>
             <div class="row anibottom">
+                
+                @foreach($faqs as $faq =>$values)
                 <div class="qstn-item">
                
                     <div class="qstn-head">
@@ -275,58 +277,25 @@
                     </div>
             
                 </div>
-                <div class="qstn-item">
+                @endforeach
                 
-                    <div class="qstn-head">
-                        <h3>Where to start?</h3>
-                        <span><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="qstn-content">
-                        <p class="text">Book an appointment through our office secretary and have a look at our outlined services for you to point out your area of interest that you would want us to help you out with.</p>
-                        <p class="text">Our Secretary will take you through our fairly pricing list on the various services we provide... You can also talk to her through her office line on <a
-                                href="#" class="k">0712 044 160</a><br> &#128521;</p>
-                    </div>
+                <div class="qstn-item">
+                    <form mathod="POST" action="{!! route('post.suggestion_complain_question') !!}">
+                        <div class="qstn-head">
+                            <h3>Any Suggestion or Complain or Question?</h3>
+                            <span><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="qstn-content">
+                            <textarea class="form-control" id="suggestion_complain_question" name="suggestion_complain_question"
+                                placeholder="Message"></textarea><br>
+                            <button class="btn-3">Submit</button><br>&#128521;
+                        </div>
+                    </form>
+                    
                 
                 </div>
-                <div class="qstn-item">
-              
-                    <div class="qstn-head">
-                        <h3>Any Suggestion?</h3>
-                        <span><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="qstn-content">
-                        <textarea class="rt" id="complain" name="complain" rows="4" cols="50"
-                            placeholder="Message"></textarea><br>
-                        <a href=""><button class="btn-3">Submit</button></a><br>&#128521;
-                    </div>
                 
-                </div>
-                <div class="qstn-item">
-                
-                    <div class="qstn-head">
-                        <h3>Complain??</h3>
-                        <span><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="qstn-content">
-                        <textarea class="rt" id="complain" name="complain" rows="4" cols="50"
-                            placeholder="Message"></textarea><br>
-                        <a href=""><button class="btn-3">Submit</button></a><br>&#128521;
-                    </div>
-                 
-                </div>
-                <div class="qstn-item">
-            
-                    <div class="qstn-head">
-                        <h3>Have More Question For Us?</h3>
-                        <span><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="qstn-content">
-                        <textarea class="rt" id="complain" name="complain" rows="4" cols="50"
-                            placeholder="Message"></textarea><br>
-                        <a href=""><button class="btn-3">Submit</button></a><br>&#128521;
-                    </div>
-                
-                </div>
+           
             </div>
         </div>
     </section>
