@@ -9,6 +9,8 @@ use App\Models\ContactInformation;
 use App\Models\Snapshot;
 use App\Models\Team;
 use App\Models\FAQ;
+use App\Models\Testimonial;
+USE App\Notifications\ContactUsIFMCLTD;
 
 class SiteController extends Controller
 {
@@ -21,8 +23,11 @@ class SiteController extends Controller
         $snapshots = Snapshot::get();
         $team_members = Team::get();
         $faqs = FAQ::where('question' ,'=!', '')->get();
+        $testimonials = Testimonial::get();
+        $contact_information = ContactInformation::first();
+        // dd($contact_information);
         $suggestion_complain_question = FAQ::where('suggestion_complain_question' ,'=!', '')->get();
-        return view('sites_files.welcome',compact('suggestion_complain_question','faqs','team_members','site_content','services','snapshots'));
+        return view('sites_files.welcome',compact('contact_information','testimonials','suggestion_complain_question','faqs','team_members','site_content','services','snapshots'));
     }
     public function about_us(Request $request)
     {
@@ -53,5 +58,10 @@ class SiteController extends Controller
     public function post_suggestion_complain_question(Request $request)
     {
         $suggestion_complain_question = $request->suggestion_complain_question;
+    }
+
+    public function contact_us_post(Request $request)
+    {
+        $contact_us = Contact
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Admin;
 use App\Models\Blog;
+use App\Models\ContactInformation;
 use App\Models\Innovation;
 use App\Models\Product;
 use App\Models\Service;
@@ -20,6 +21,13 @@ use Illuminate\Support\Facades\Schema;
 class AdminController extends Controller
 {
     // 
+
+    public function edit_contact_information(Request $request)
+    {
+        $contact_information = ContactInformation::first();
+
+        return view('admin.edit_contact_information',compact('contact_information'));
+    }
     public function add_product()
     {
         $services = Service::get();
@@ -118,6 +126,22 @@ class AdminController extends Controller
             $request->session()->flash("success", $team_member->name." Posted Sucessfully!");
             return redirect()->back();
     }
+
+     public function post_edit_contact_information(Request $request)
+     {
+        // $contact_information = ContactInformation::where('uniqid','=', $request->uniqid)->first();
+        // dd($request->email);
+        $contact_information = ContactInformation::where('uniqid','=', $request->uniqid)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            
+        ]);
+        Log::info( $request->name." Updated Sucessfully!");
+        $request->session()->flash("success",$request->name." Updated Successfully!");
+        return redirect()->back();
+
+     }
 
     public function post_testimonial(Request $request)
     {

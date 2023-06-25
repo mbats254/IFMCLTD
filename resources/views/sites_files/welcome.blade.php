@@ -311,37 +311,18 @@
             
             </div>
             <div class="row owl-carousel owl-theme">
-            
+                @foreach($testimonials as $testimonial =>$values)
                 <div class="response-item">
                     <div class="response-img">
-                        <img src="/img/homeimg/cusp/68.jpg" alt="">
+                        <img src="{!!  $values->photo !!}" alt="">
                     </div>
-                    <span>@Loise Wanjiru &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;</span>
+                    <span>{!!  $values->name !!} &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;</span>
                     <p>
-                    ...I had my whole lost stock replaced all thanks to Mwaura Kennedy Firm...
+                    {!! $values->comment !!}
                     </p>
 
                 </div>
-                <div class="response-item">
-                    <div class="response-img">
-                        <img src="/img/homeimg/cusp/50.jpg" alt="">
-                    </div>
-                    <span>@Wangari Ruth &#128522; &#128156;</span>
-                    <p>
-                    ...Thanks to Mwaura Kennedy FIRM my business records are secured and up to date...
-                    </p>
-
-                </div>
-                <div class="response-item">
-                    <div class="response-img">
-                        <img src="/img/homeimg/cusp/401.jpg" alt="">
-                    </div>
-                    <span>@Mwaura Kennedy &#128526;</span>
-                    <p>
-                    ...We need more firms like Mwaura Kennedy Firm...
-                    </p>
-
-                </div>
+               @endforeach
                 
             </div>
         </div>
@@ -392,9 +373,9 @@
                     <div>
                         <h2>Also through:</h2><br>
                         <i class="far fa-envelope"></i>
-                        <p>info@ifmcltd.com / leah@ifmcltd.com</p><br>
+                        <p>{!! $contact_information->email !!}</p><br>
                         <i class="fas fa-phone-alt"></i>
-                        <p>+254768072844</p>
+                        <p>{!! $contact_information->phone_number !!}</p>
                     </div>
                 </div>
 

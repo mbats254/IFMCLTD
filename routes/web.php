@@ -35,6 +35,7 @@ Route::get('/admin/all/services', [App\Http\Controllers\AdminController::class ,
 Route::get('/admin/all/descriptive_listing/{uniqid}', [App\Http\Controllers\AdminController::class ,'all_descriptive_listing'])->name('all.descriptive_listing');
 Route::get('/admin/edit/product/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_product'])->name('edit.product');
 Route::get('/admin/edit/service/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_service'])->name('edit.service');
+Route::get('/admin/edit/contact/information/', [App\Http\Controllers\AdminController::class,'edit_contact_information'])->name('edit.contact.informtion');
 Route::get('/admin/delete/product/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_product'])->name('delete.product');
 Route::get('/admin/delete/service/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_service'])->name('delete.service');
 Route::get('/add/testimonial', [App\Http\Controllers\AdminController::class,'add_testimonial'])->name('add.testimonial');
@@ -53,6 +54,7 @@ Route::get('/add/team/member', [App\Http\Controllers\AdminController::class,'add
 Route::post('/post/team/member', [App\Http\Controllers\AdminController::class,'post_team_member'])->name('post.team.member');
 Route::post('/post/service', [App\Http\Controllers\AdminController::class,'post_service'])->name('post.service');
 Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'post_testimonial'])->name('post.testimonial');
+Route::post('/post/edited/contact/information', [App\Http\Controllers\AdminController::class,'post_edit_contact_information'])->name('post.edit.contact.information');
 });
 
 // Site Routes

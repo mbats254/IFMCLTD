@@ -90,6 +90,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('edit.contact.informtion')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Edit Contact Information') }}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{route('add.faq')}}">
                         <i class="fa fa-plus text-primary"></i> {{ __('Add FAQ') }}
                     </a>
