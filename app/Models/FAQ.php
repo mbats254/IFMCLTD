@@ -9,6 +9,6 @@ class FAQ extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'question ', 'answer', 'uniqid'
+        'question ', 'answer', 'uniqid', 'suggestion_complain_question'
     ];
 }

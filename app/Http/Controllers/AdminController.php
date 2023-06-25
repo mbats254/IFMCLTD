@@ -124,11 +124,10 @@ class AdminController extends Controller
         $photo = $request->file('photo');
         $uniqid = uniqid();
         $request->file('photo')->move(base_path() . '/public/images/', $file_name = str_replace(" ", "_", '/images/'.$request->name . $uniqid) . "." . $photo->getClientOriginalExtension());
+        $request['uniqid'] = uniqid();
+        $request['file_name'] = $file_name;
         $testimonial = Testimonial::create([
-                'name' => $request->name,        
-                'photo' => $file_name,
-                'comment'=> $request->comment,
-                'uniqid'=> $uniqid
+                $request->all()
         ]);
 
         Log::info( $testimonial->name."'s Posted Sucessfully!");
@@ -144,6 +143,15 @@ class AdminController extends Controller
     public function all_product(Request $request)
     {
         $products = Product::all();
+        return view('admin.all_products',compact('products'));
+        // dd($products);
+    }
+
+    public function all_descriptional_listing(Request $request)
+    {
+        $service = Service::where('uniqid','=' ,$request->uniqid)->get()->first();
+        $descriptional_listings = $service->descriptional_listing;
+        dd($descriptional_listings);
         return view('admin.all_products',compact('products'));
         // dd($products);
     }
@@ -205,18 +213,42 @@ class AdminController extends Controller
     {
         $service = Service::where('uniqid','=',$request->uniqid)->get()->first();
         $fields =  Schema::getColumnListing($service->getTable());
-        // dd($fields[0]);
-
-        for ($i=0;$i<sizeof($fields);$i++) {
+        // dd($fields);
+        $descriptional_listings = explode(",",$service->descriptional_listing);
+        $list_item_description = explode(",",$service->list_item_description);
+        // dd(sizeof($list_item_description));
+        if(sizeof($descriptional_listings) == sizeof($list_item_description))
+        {
+           array_push($descriptional_listings,$request->descriptional_listing);
+        //    dd($request->descriptional_listing);
+        //    dd(implode(",",$descriptional_listings));
+           $request['descriptional_listings'] = implode(",",$descriptional_listings);
+            array_push($list_item_description,$request->list_item_description);
+            $request['list_item_description'] = implode(",",$list_item_description);
+         
+            // dd(implode(",",$list_item_description));
+        }
+        // dd(($request['descriptional_listings'] ));
+        dd($request->all());
+        
+        $notaffected = [];
+        $affected = [];
+        for ($i=1;$i<sizeof($fields);$i++) {
             $this_field = $fields[$i];
-            if ($service->$this_field !== null && $request->$this_field !== null)
+            // dd($service->$this_field !== $request->$this_field);
+            if ($service->$this_field !== $request->$this_field)
              {
+            //  array_push($affected,$this_field);
                 Service::where('uniqid','=',$request->uniqid)->update([
                     $this_field => $request->$this_field
                 ]);
 
                }
+               else{
+                array_push($notaffected, $this_field);
+               }
         }
+        // dd(implode(',',$affected).'/// '.implode(",",$notaffected));
         Log::info( $service->name."'s Updated Sucessfully!");
         $request->session()->flash("success", $service->name."'s Updated Sucessfully!");
         return redirect()->back();

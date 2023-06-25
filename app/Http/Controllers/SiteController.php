@@ -6,16 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\SiteContent;
 use App\Models\Service;
 use App\Models\ContactInformation;
+use App\Models\Snapshot;
 
 class SiteController extends Controller
 {
 
     public function welcome(Request $request)
     {
-        $site_content = SiteContent::get();
-        // dd($site_content);
+        $site_content = SiteContent::orderBy('id','desc')->first();
+        // dd($site_content['about_home_paragraph']);
         $services = Service::get();
-        return view('sites_files.welcome',compact('site_content','services'));
+        $snapshots = Snapshot::get();
+        return view('sites_files.welcome',compact('site_content','services','snapshots'));
     }
     public function about_us(Request $request)
     {

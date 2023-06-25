@@ -66,14 +66,15 @@
     <!--Intro home Sect-->
     <section class="waa">
         <div class="st owl-carousel owl-theme">
+            @foreach($snapshots as $snapshot=> $values )
             <div class="ip">
 
                 <div class="full-slider-box f-slide-1" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),url(/img/homeimg/customers.jpg);">
                     <div class="wabebe">
                         <div class="f-slider-text">
-                            <span class="opnin">Welcome To</span>
-                            <strong>Integrated Financial <br>Management <br>Consultants Limited<br> 
-                                <font>IFMC</font>
+                            <span class="opnin">{!! $values->title !!}</span>
+                            {{-- <strong>Integrated Financial <br>Management <br>Consultants Limited<br>  --}}
+                                <font>{!! $values->accompanying_text !!}</font>
                             </strong>
                             <div class="m-btn">
                                 <a href="/service" class="f-slider-btn service Sf">Our Services</a>
@@ -85,49 +86,9 @@
                 </div>
              
             </div>
-            <div class="ip2">
-                <div class="full-slider-box f-slide-2" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),url(/img/homeimg/40.jpg); ">
-                    <div class="slider-text-container">
-                        <div class="f-slider-text">
-                            <span>We entrust our customers with</span>
-                            <strong>Efficiency <br>Trustworthy <font>Honesty</font></strong>
-                            <div class="m-btn">
-                                <a href="/service" class="f-slider-btn service Sf">Our Services</a>
-                                <a href="/about" class="f-btn about Af">About Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ip3">
-                <div class="full-slider-box f-slide-3" style=" background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),url(/img/homeimg/aa.jpg); ">
-                    <div class="Kaiga">
-                        <div class="f-slider-text">
-                            <span>We Are Located</span>
-                            <strong>at  <br>Kiambu <font>Riverside Estate</font></strong>
-                            <div class="m-btn">
-                                <a href="/service" class="f-slider-btn service Sf">Our Services</a>
-                                <a href="/about" class="f-btn about Af">About Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ip4">
-                <div class="full-slider-box f-slide-4" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),url(/img/homeimg/c.jfif);">
-                    <div class="sufuri">
-                        <div class="f-slider-text">
-                            <span>You can reach us through</span>
-                            <strong>Our  <br>Office line <font>	0768072844</font></strong>
 
-                        </div>
-                        <div class="m-btn" id="s-mbtn">
-                               <a href="/service" class="f-slider-btn service Sf">Our Services</a>
-                                <a href="/about" class="f-btn about Af">About Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+           
 
 
         </div>
@@ -144,25 +105,17 @@
                             <h2>About Us</h2>
                             <div class="line5"></div> 
                         <p class="text">
-                        IFMC is a business advisory services a management consulting company registered in Kenya. We offer financial management Services that are integrated with other advisory services in operations and strategy management with a focus to business/Institution growth and we are sensitive to costs that are affordable. IFMC Firm major on these fields as follows:
+                        {!! $site_content->about_home_paragraph !!}
                         </p>
                         <div class="right aniright">
+                            @foreach($services as $service => $values)
                             <div class="serv-icon si1">
-                                <a href="/servicefinance" class="isize AAbtn ps-4 pe-4 pb-2"style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class="fas fa-balance-scale"></i></a>
-                                <p class="serv-icon-name">Finance Management</p>
+                                <a href="{{ route('single.service',$values->uniqid) }}" class="isize AAbtn ps-4 pe-4 pb-2" style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class={!! $values->icon  !!}></i></a>
+                                <p class="serv-icon-name">{!!  $values->name !!}</p>
                             </div>
-                            <div class="serv-icon si2">
-                                <a href="/serviceoperation" class="isize TSbtn ps-4 pe-4 pb-2"style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class="fas fa-calculator"></i></a>
-                                <p class="serv-icon-name">Operation Management</p>
-                            </div>
-                            <div class="serv-icon si3">
-                                <a href="/servicestrategic" class="isize CAbtn ps-4 pe-4 pb-2"style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class="fas fa-cloud"></i></a>
-                                <p class="serv-icon-name">Strategic Management</p>
-                            </div>
-                            <div class="serv-icon si4">
-                                <a href="/serviceinstitutionleakage" class="isize OSbtn ps-4 pe-4 pb-2"style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class="fas fa-clone"></i></a>
-                                <p class="serv-icon-name">Finance Literacy Management</p>
-                            </div>
+
+                            @endforeach
+                          
                         </div>
                        
                     </div>
@@ -184,10 +137,8 @@
                     <h2>Our Goal</h2>
                     <div class="line2"></div>
                     <p class="text barbar">
-                    <div class="walai">&#10004;</div> <p class="nviiri">Uphold Professionalism , ethics and high integrity</p><br>
-                    <div class="walai">&#10004;</div> <p class="nviiri">Efficient delivery of our services</p> <br>
-                    <div class="walai">&#10004;</div><p class="nviiri">Listen to customers and design services that suit them</p><br>
-                    <div class="walai">&#10004;</div><p class="nviiri">Work with our clients to grow their businesses /Institutions to the next level</p>
+                    <div class="walai">&#10004;</div> <p class="nviiri">{!! $site_content->our_goal  !!}</p><br>
+
                     
                     </p>
 
@@ -197,7 +148,7 @@
                     <h2>Our Vision</h2>
                     <div class="line2"></div>
                     <p class="text ty">
-                    To be the leading Company offering hybrid business management advisory services globally with affordable costs.
+                    {!! $site_content->vision !!}
                     </p>
         
                 </div>
@@ -206,9 +157,8 @@
                     <h2>Our Mission</h2>
                     <div class="line2"></div>
                     <p class="text ty">
-                        <p class="nviiri">To offer our clients integrated business advisory services that will lead to businesses/Institution growth to higher performance levels with affordable costs.</p><br>
-                        <p class="nviiri">To equip our clients and their staff with skills and knowledge that will lead to sustainable business structures and business growth.</p><br>
-                        <p class="nviiri">To empower the society through  capacity building in financial management and all rounded life skills  with an aim to improve their livelihood and economy.</p>
+                        <p class="nviiri">{!! $site_content->mission !!}</p><br>
+                        
                     </p>
                     
                 </div>
@@ -228,63 +178,24 @@
                 <p class="text">We offer various services</p>
             </div>
             <div class="row">
+                @foreach($services as $service =>$values)
                 <div class="price-item anileft">
-                    <h2>Finance Management</h2>
+                   
+                    <h2>{!! $values->name !!}</h2>
                     <ul>
-                        <li><span class="oya">&#10004;</span><br>system audit</li>
-                        <li><span class="oya">&#10004;</span><br>Financial audit</li>
-                        <li><span class="oya">&#10004;</span><br>Operational audit</li>
-                        <li><span class="oya">&#10004;</span><br>Forensic audit</li>
+
+                        <li><span class="oya">&#10004;</span><br>{!! $values->what_we_offer !!}</li>
+                        
                     </ul>
                     <div class="ptag">
-                        <span>$1400</span>
+                        <span>{!! $values->price !!}</span>
                         <span class="text">Each Monthly</span>
                     </div>
 
                 </div>
-                <div class="price-item aniright">
-                    <h2>Operation Management</h2>
-                    <ul>
-                        <li><span class="oya">&#10004;</span><br>Value Added Tax (VAT)</li>
-                        <li><span class="oya">&#10004;</span><br>Income tax</li>
-                        <li><span class="oya">&#10004;</span><br>Capital Gains Tax (CGT)</li>
-                        <li><span class="oya">&#10004;</span><br>Betting and Pool Tax</li>
-                    </ul>
-                    <div class="ptag">
-                        <span>$1400</span>
-                        <span class="text">Each Monthly</span>
-                    </div>
-
-                </div>
-                <div class="price-item aniright">
-                    <h2>Strategic Management</h2>
-                    <ul>
-                        <li><span class="oya">&#10004;</span><br>Periodic stock count</li>
-                        <li><span class="oya">&#10004;</span><br>Continuous or perpetual stock count</li>
-                        <li><span class="oya">&#10004;</span><br>Stockout validation</li>
-                        <li><span class="oya">&#10004;</span><br>Pick accuracy</li>
-                    </ul>
-                    <div class="ptag">
-                        <span>$1400</span>
-                        <span class="text">Each Monthly</span>
-                    </div>
-
-                </div>
-                <div class="price-item anileft">
-                    <h2>Finance Literacy Management</h2>
-                    <ul>
-                        <li><span class="oya">&#10004;</span><br>Periodic stock count</li>
-                        <li><span class="oya">&#10004;</span><br>Continuous or perpetual stock count</li>
-                        <li><span class="oya">&#10004;</span><br>Stockout validation</li>
-                        <li><span class="oya">&#10004;</span><br>Pick accuracy</li>
-                    </ul>
-                    <div class="ptag">
-                        <span>$1400</span>
-                        <span class="text">Each Monthly</span>
-                    </div>
-
-                </div>
-    
+                @endforeach
+               
+            
             </div>
         </div>
     </section>
@@ -308,107 +219,32 @@
                 <p class="text">Our Team</p>
             </div>
             <div class="row owl-carousel owl-theme">
-        
+                @foreach($team_members as $team =>$values)
                 <div class="t-item">
                     <div class="t-img">
-                        <img src="/img/homeimg/userp/401.jpg" alt="">
+                        <img src="{!! $values->photo !!}" alt="">
                         <div class="t-icon">
-                            <a href="" class="center"  style="text-decoration: none;">
+                            <a href="{!! $values->facebook !!}" class="center"  style="text-decoration: none;">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="" class="center"  style="text-decoration: none;">
+                            <a href={!! $values->twitter</a> !!} class="center"  style="text-decoration: none;">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="" class="center"  style="text-decoration: none;">
+                            <a href={!! $values->instagram !!}  class="center"  style="text-decoration: none;">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
                     <div class="t-info">
-                        <h3>Leah Mburu</h3>
-                        <span>Managing Director / Lead Consultant</span>
+                        <h3>{!! $values->name   !!}</h3>
+                        <span>{!! $values->position !!}</span>
                     </div>
                 </div>
-                <div class="t-item">
-                    <div class="t-img">
-                        <img src="/img/homeimg/userp/18.jpg" alt="">
-                        <div class="t-icon">
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="t-info">
-                        <h3>Roseanne Mbaya</h3>
-                        <span>Training and capacity building</span>
-                    </div>
-                </div>
-                <div class="t-item">
-                    <div class="t-img">
-                        <img src="/img/homeimg/userp/77.jpg" alt="">
-                        <div class="t-icon">
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="t-info">
-                        <h3>Joyness Kazimoto</h3>
-                        <span>Tanzanian Auditor</span>
-                    </div>
-                </div>
-                <div class="t-item">
-                    <div class="t-img">
-                        <img src="/img/homeimg/userp/1.jpg" alt="">
-                        <div class="t-icon">
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="t-info">
-                        <h3>Rispah Kariuki</h3>
-                        <span>Senior business development professional</span>
-                    </div>
-                </div>
-                <div class="t-item">
-                    <div class="t-img">
-                        <img src="/img/homeimg/userp/9.jpg" alt="">
-                        <div class="t-icon">
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="" class="center"  style="text-decoration: none;">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="t-info">
-                        <h3>Rogers Kasawuli</h3>
-                        <span>In charge of Rwanda and Uganda operations</span>
-                    </div>
-                </div>
+                @endforeach
+               
+              
+               
+                
             
 
             </div>
