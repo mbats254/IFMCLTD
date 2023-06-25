@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\SiteContent;
 use App\Models\Service;
 use App\Models\ContactInformation;
+use App\Models\ContactUs;
 use App\Models\Snapshot;
 use App\Models\Team;
 use App\Models\FAQ;
 use App\Models\Testimonial;
-USE App\Notifications\ContactUsIFMCLTD;
-
+use App\Notifications\ContactUsIFMCLTD;
+use Illuminate\Support\Facades\Schema;
+use App\Models\Blog;
+use Illuminate\Support\Facades\Log;
 class SiteController extends Controller
 {
 
@@ -62,6 +65,22 @@ class SiteController extends Controller
 
     public function contact_us_post(Request $request)
     {
-        $contact_us = Contact
+   
+        unset($request['_token']);
+        $request['uniqid'] = uniqid();
+        // dd($request->all());
+     
+      
+        $contact_us = ContactUs::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'uniqid' => uniqid(),
+            'message' => $request->message,
+            'subject' => $request->subject
+        ]);
+        Log::info( $contact_us->name."'s Deleted Sucessfully!");
+        $request->session()->flash("success", $contact_us->name."'s Deleted Sucessfully!");
+        return redirect()->back();
+        // dd($contact_us);
     }
 }

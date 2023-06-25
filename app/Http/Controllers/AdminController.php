@@ -18,6 +18,7 @@ use App\Models\FAQ;
 use App\Models\Snapshot;
 use Illuminate\Support\Facades\Schema;
 
+
 class AdminController extends Controller
 {
     // 

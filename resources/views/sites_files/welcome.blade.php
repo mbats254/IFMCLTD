@@ -361,13 +361,14 @@
                     </div>
                 </div>
                 <div class="c-r aniright">
-                    <form action="#">
+                    <form method="POST" action={!! route('contact.us.post') !!}>
+                        @csrf
                         <h2>Get In Touch</h2>
-                        <span>We Here For You &#128579;</span>
-                        <input type="text" class="fin" placeholder="Name">
-                        <input type="email" class="" placeholder="Example@gmail.com">
-                        <input type="text" class="" placeholder="Subject">
-                        <textarea placeholder="Your Message" rows="10" cols="30"></textarea>
+                        <span>We Here For You &#128579;</span>                        
+                        <input type="text" name="name" class="fin" placeholder="Name">
+                        <input type="email" name="email" class="" placeholder="Example@gmail.com">
+                        <input type="text" name="subject" class="" placeholder="Subject">
+                        <textarea name="message" placeholder="Your Message" rows="10" cols="30"></textarea>
                         <button type="submit" class="send-btn">Submit</button>
                     </form>
                     <div>
