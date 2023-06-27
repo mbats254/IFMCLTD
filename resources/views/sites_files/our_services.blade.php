@@ -5,17 +5,7 @@
     <div class="online_chat">
         <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>
     </div>
-    <div class="o-chatdisplay">
-        <div class="hd-chat" id="mtexto">
-            <a href="#mchato" class="chat-cancel">
-                <i class="fas fa-times"></i>
-            </a>
-            <h1>ONLINE CHAT</h1>
-        </div>
-        <div class="m-chat">
-
-        </div>
-    </div>
+    
 <!--home wehere it happens section-->   
  <section class="p-14">
 
