@@ -124,6 +124,11 @@
                         <i class="fa fa-list text-primary"></i> {{ __('All Services') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.testimonials') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Testimonials') }}
+                    </a>
+                </li>
                 
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('all.products')}}">

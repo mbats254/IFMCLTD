@@ -31,6 +31,7 @@ Route::get('/add/product', [App\Http\Controllers\AdminController::class, 'add_pr
 Route::get('/add/category', [App\Http\Controllers\AdminController::class, 'add_category'])->name('add.category');
 Route::get('/add/faq', [App\Http\Controllers\AdminController::class ,'add_faq'])->name('add.faq');
 Route::get('/admin/all/products', [App\Http\Controllers\AdminController::class, 'all_product'])->name('all.products');
+Route::get('/admin/all/testimonials', [App\Http\Controllers\AdminController::class, 'all_testimonials'])->name('all.testimonials');
 Route::get('/admin/all/services', [App\Http\Controllers\AdminController::class ,'all_services'])->name('all.services');
 Route::get('/admin/all/descriptive_listing/{uniqid}', [App\Http\Controllers\AdminController::class ,'all_descriptive_listing'])->name('all.descriptive_listing');
 Route::get('/admin/edit/product/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_product'])->name('edit.product');

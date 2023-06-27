@@ -181,6 +181,13 @@ class AdminController extends Controller
         return view('admin.all_products',compact('products'));
         // dd($products);
     }
+   
+    public function all_testimonials(Request $request)
+    {
+        $testimonials = Testimonial::all();
+        return view('admin.all_testimonials',compact('testimonials'));
+        // dd($products);
+    }
 
     public function all_descriptional_listing(Request $request)
     {
