@@ -75,19 +75,13 @@
                     <button type="submit" class="send-btn">Submit</button>
                 </form>
                 <div class="talk-staff">
-                
+                @foreach($team_members as $member =>$values )
                     <div>
-                        <img src="/img/contactimg/401.jpg" alt="">
-                        <p><span>Leah Mburu</span>Managing Director / Lead Consultant<br>phone: +254768072844<br>Email:leahmwambui@gmail.com</p>
+                        <img src="{!! $values->photo !!}" alt="">
+                        <p><span>{!! $values->name !!}</span>{!! $values->position !!}<br>phone: {!! $values->phone_number !!}<br>Email:{!! $values->email !!}/p>
                     </div>
-                    <div>
-                        <img src="/img/contactimg/50.jpg" alt="">
-                        <p><span>Alice Kamuyu</span>Human Resource Director<br>phone: +254712044160<br>Email:kennedymwaura155@gmail.com</p>
-                    </div>
-                    <div>
-                        <img src="/img/contactimg/68.jpg" alt="">
-                        <p><span>Rispah Kariuki</span>Office Secretary<br>phone: +254712044160<br>Email:kennedymwaura155@gmail.com</p>
-                    </div>
+                    @endforeach
+                 
         
                 </div>
             </section>

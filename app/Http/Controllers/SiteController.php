@@ -45,7 +45,8 @@ class SiteController extends Controller
     public function contact_us(Request $request)
     {
         $contact_information = ContactInformation::orderBy('id','desc')->first();
-        return view('sites_files.contact_us',compact('contact_information'));
+        $team_members = Team::get();
+        return view('sites_files.contact_us',compact('contact_information','team_members'));
     }
     
     public function our_services(Request $request)

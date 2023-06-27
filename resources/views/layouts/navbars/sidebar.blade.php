@@ -91,7 +91,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('edit.contact.informtion')}}">
-                        <i class="fa fa-plus text-primary"></i> {{ __('Edit Contact Information') }}
+                        <i class="fa fa-pen text-primary"></i> {{ __('Edit Contact Information') }}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -101,17 +101,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.site.content')}}">
-                        <i class="fa fa-plus text-primary"></i> {{ __('Add Site Content') }}
+                        <i class="fa fa-pen text-primary"></i> {{ __('Edit Site Content') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('add.team.member') }}">
-                        <i class="fa fa-list text-primary"></i> {{ __('Add Team Member') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Team Member') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('add.testimonial') }}">
-                        <i class="fa fa-list text-primary"></i> {{ __('Add Testimonial') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Testimonial') }}
                     </a>
                 </li>
                 <li class="nav-item">

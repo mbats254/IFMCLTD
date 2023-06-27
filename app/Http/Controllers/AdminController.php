@@ -26,6 +26,8 @@ class AdminController extends Controller
     public function edit_contact_information(Request $request)
     {
         $contact_information = ContactInformation::first();
+        // dd($contact_information);
+        
 
         return view('admin.edit_contact_information',compact('contact_information'));
     }
@@ -131,11 +133,15 @@ class AdminController extends Controller
      public function post_edit_contact_information(Request $request)
      {
         // $contact_information = ContactInformation::where('uniqid','=', $request->uniqid)->first();
-        // dd($request->email);
+        // dd($request->all());
+   
         $contact_information = ContactInformation::where('uniqid','=', $request->uniqid)->update([
             'name' => $request->name,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
+            'P_O_address' => $request->P_O_address,
+            'physical_location' => $request->physical_location,
+            'map_link' => $request->map_link,
             
         ]);
         Log::info( $request->name." Updated Sucessfully!");
