@@ -35,8 +35,9 @@ class SiteController extends Controller
     }
     public function about_us(Request $request)
     {
-        $site_content = SiteContent::get();
-        return view('sites_files.about_us');
+        $site_content = SiteContent::orderBy('id','desc')->first();
+        $team_members = Team::get();
+        return view('sites_files.about_us',compact('site_content','team_members'));
     }
 
     public function contact_us(Request $request)

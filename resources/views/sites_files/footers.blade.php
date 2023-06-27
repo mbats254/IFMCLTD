@@ -141,7 +141,7 @@
         </div>
     </div>
     <div class="copyrighticons">
-        <p>Copyright © 2022 All rights reserved | This template created by Mwaura Kennedy</p>
+        <p>Copyright © {!! date('Y') !!} All rights reserved | This template created by Mwaura Kennedy</p>
         <div class="f-links">
             <a href="#" class="center">
                 <i class="fab fa-facebook-f"></i>
