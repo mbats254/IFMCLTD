@@ -244,23 +244,25 @@ class AdminController extends Controller
     {
         $service = Service::where('uniqid','=',$request->uniqid)->get()->first();
         $fields =  Schema::getColumnListing($service->getTable());
-        // dd($fields);
+        // dd($request->all());
+        $full_listing = [$request['descriptional_listing'] .':'.$request['list_item_description']];
+        // dd($full_listing);
         $descriptional_listings = explode(",",$service->descriptional_listing);
-        $list_item_description = explode(",",$service->list_item_description);
-        // dd(sizeof($list_item_description));
-        if(sizeof($descriptional_listings) == sizeof($list_item_description))
+       
+        if(!in_array($full_listing, $descriptional_listings))
         {
-           array_push($descriptional_listings,$request->descriptional_listing);
+            array_push($descriptional_listings,implode(',',$full_listing));
+        }
+           
         //    dd($request->descriptional_listing);
-        //    dd(implode(",",$descriptional_listings));
-           $request['descriptional_listings'] = implode(",",$descriptional_listings);
-            array_push($list_item_description,$request->list_item_description);
-            $request['list_item_description'] = implode(",",$list_item_description);
+        //    dd(($descriptional_listings));
+           $request['descriptional_listing'] = implode(",",$descriptional_listings);
+            
          
             // dd(implode(",",$list_item_description));
-        }
+        
         // dd(($request['descriptional_listings'] ));
-        dd($request->all());
+        // dd($request->all());
         
         $notaffected = [];
         $affected = [];
@@ -330,6 +332,40 @@ class AdminController extends Controller
         $request->session()->flash("success", $snapshot->title."'s Posted Sucessfully!");
         return redirect()->back();
         
+    }
+
+    public function all_descriptive_listing(Request $request)
+    {
+        $service = Service::where('uniqid','=',$request->uniqid)->first();
+        // dd();
+        $descriptive_listing = explode(',',$service->descriptional_listing);
+        if($service->name !== 'Finance Literacy & Institution Linkages')
+        {
+            Log::info( "Only applicable for Finance Literacy & Institution Linkages not".$service->name);
+        $request->session()->flash("error","Only Applicable for Finance Literacy & Institution Linkages Not ".$service->name);
+        return redirect()->back();
+        }
+        else
+        {
+            
+            return view('admin.all_descriptive_listing',compact('service','descriptive_listing'));
+        }
+    }
+
+    public function descriptive_listing(Request $request)
+    {
+       $service = Service::where('uniqid','=',$request->uniqid)->first();
+    //    dd();
+       $saved_array =  explode(",",$service->descriptional_listing);
+       unset($saved_array[$request->index]);
+       $service->update([
+        'descriptional_listing' => implode(',',$saved_array)
+       ]);
+       Log::info( $service->name."'s Updated Sucessfully!");
+       $request->session()->flash("success", $service->name."'s Updated Sucessfully!");
+       return redirect()->back();
+
+
     }
     
 

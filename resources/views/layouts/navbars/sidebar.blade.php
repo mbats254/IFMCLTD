@@ -5,8 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/home">
-            <img src="/site/images/TOM.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand pt-0" href="/">
+            <img src="/img/me.png" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -73,12 +73,12 @@
                     </a>
                 </li>
 
-              
+{{--               
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.product')}}">
                         <i class="fa fa-plus text-primary"></i> {{ __('Add Product') }}
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.service')}}">
                         <i class="fa fa-plus text-primary"></i> {{ __('Add Service') }}
@@ -114,11 +114,11 @@
                         <i class="fa fa-plus text-primary"></i> {{ __('Add Testimonial') }}
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('all.products') }}">
                         <i class="fa fa-list text-primary"></i> {{ __('All Products') }}
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('all.services') }}">
                         <i class="fa fa-list text-primary"></i> {{ __('All Services') }}

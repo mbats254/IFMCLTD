@@ -37,6 +37,7 @@ Route::get('/admin/edit/product/{uniqid}', [App\Http\Controllers\AdminController
 Route::get('/admin/edit/service/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_service'])->name('edit.service');
 Route::get('/admin/edit/contact/information/', [App\Http\Controllers\AdminController::class,'edit_contact_information'])->name('edit.contact.informtion');
 Route::get('/admin/delete/product/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_product'])->name('delete.product');
+Route::get('/admin/descriptive/listing/{uniqid}/{index}', [App\Http\Controllers\AdminController::class,'descriptive_listing'])->name('delete.descriptive_listing');
 Route::get('/admin/delete/service/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_service'])->name('delete.service');
 Route::get('/add/testimonial', [App\Http\Controllers\AdminController::class,'add_testimonial'])->name('add.testimonial');
 Route::post('/post/product', [App\Http\Controllers\AdminController::class,'post_product'])->name('post.product');
