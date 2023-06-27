@@ -12,7 +12,9 @@ use App\Models\Admin;
 use App\Models\Team;
 use App\Models\FAQ;
 use App\Models\Testimonial;
+use App\Models\Subscriber;
 use App\Notifications\ContactUsIFMCLTD;
+use App\Notifications\WelcomeSubscriber;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Log;
@@ -90,5 +92,21 @@ class SiteController extends Controller
         $request->session()->flash("success", $contact_us->name."'s Added Sucessfully!");
         return redirect()->back();
         // dd($contact_us);
+    }
+
+    public function newsletter_subscribe(Request $request)
+    {
+        $subscriber = Subscriber::create([
+            'email' => $request->email,
+            'uniqid' => uniqid()
+        ]);
+
+       
+            $subscriber->notify(new WelcomeSubscriber($subscriber));
+        
+        Log::info( $subscriber->email."'s Added Sucessfully!");
+        $request->session()->flash("success", $subscriber->email."'s Added Sucessfully!");
+        return redirect()->back();
+        
     }
 }

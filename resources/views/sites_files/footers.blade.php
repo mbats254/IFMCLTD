@@ -111,7 +111,7 @@
         @endphp
 
 @foreach($services as $service =>$values)
-        <li><a href="{{ route('single.service',$values->uniqid) }} class="CAbtn"><i class="fas fa-long-arrow-right"></i>{!! $values->name !!}</a></li>
+        <li><a href="{{ route('single.service',$values->uniqid) }}" class="CAbtn"><i class="fas fa-long-arrow-right"></i>{!! $values->name !!}</a></li>
        @endforeach
        
        
@@ -134,8 +134,10 @@
         <h3>Newsletter</h3>
         <p>Get E-mail updates about our services and special offers, </p>
         <div class="subscribe">
-            <input type="email" placeholder="Example@gmail.com" required>
-            <a href="#" class="yellow">SUBSCRIBE</a>
+            <form method="POST" action={{ route('newsletter.subscribe') }}>
+                @csrf
+                <input type="email" name="email" placeholder="Example@gmail.com" required>
+            <input type="submit"  href="#" class="btn btn-primary"  value="SUBSCRIBE"/>
         </div>
     </div>
     <div class="Payments">

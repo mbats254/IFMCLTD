@@ -67,3 +67,4 @@ Route::get('/service', [App\Http\Controllers\SiteController::class,'our_services
 Route::post('/post/suggestion/or/question/or/complain', [App\Http\Controllers\SiteController::class,'post_suggestion_complain_question'])->name('post.suggestion_complain_question');
 Route::get('/single/service/{uniqid}', [App\Http\Controllers\SiteController::class,'single_service'])->name('single.service');
 Route::post('/contact/us/post', [App\Http\Controllers\SiteController::class,'contact_us_post'])->name('contact.us.post');
+Route::post('/newsletter/subscribe', [App\Http\Controllers\SiteController::class,'newsletter_subscribe'])->name('newsletter.subscribe');
