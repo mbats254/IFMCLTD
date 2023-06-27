@@ -44,7 +44,7 @@ class SiteController extends Controller
 
     public function contact_us(Request $request)
     {
-        $contact_information = ContactInformation::get();
+        $contact_information = ContactInformation::orderBy('id','desc')->first();
         return view('sites_files.contact_us',compact('contact_information'));
     }
     
@@ -72,7 +72,7 @@ class SiteController extends Controller
    
         unset($request['_token']);
         $request['uniqid'] = uniqid();
-        // dd($request->all());
+        // dd($request->name);
      
       
         $contact_us = ContactUs::create([
@@ -83,6 +83,7 @@ class SiteController extends Controller
             'subject' => $request->subject
         ]);
         $alladmins = Admin::get();
+        // dd($contact_us);
         for($i=0;$i<sizeof($alladmins);$i++)
         {
             $alladmins[$i]->notify(new ContactUsIFMCLTD($alladmins[$i],$contact_us));

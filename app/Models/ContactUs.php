@@ -10,7 +10,7 @@ class ContactUs extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = [
-        'name ', 'email', 'uniqid',  'message', 'subject'
+        'name', 'email', 'uniqid',  'message', 'subject'
     ];
 
     

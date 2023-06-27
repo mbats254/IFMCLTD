@@ -42,7 +42,7 @@
                             <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
                             <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
-                            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="/contact/us" class="nav-link">Contact</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
