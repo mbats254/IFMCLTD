@@ -157,8 +157,12 @@ class AdminController extends Controller
         $request->file('photo')->move(base_path() . '/public/images/', $file_name = str_replace(" ", "_", '/images/'.$request->name . $uniqid) . "." . $photo->getClientOriginalExtension());
         $request['uniqid'] = uniqid();
         $request['file_name'] = $file_name;
+        // dd($request->all());
         $testimonial = Testimonial::create([
-                $request->all()
+            "name" => $request->name,
+            "comment" => $request->comment,
+            "uniqid" =>uniqid(),
+            "photo" => $file_name
         ]);
 
         Log::info( $testimonial->name."'s Posted Sucessfully!");
