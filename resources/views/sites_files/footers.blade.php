@@ -103,11 +103,18 @@
         <li><a href="/contact" class="contact Cf"><i class="fas fa-long-arrow-right"></i>Contact</a></li>
     </div>
     <div class="hfooter">
+ 
         <h3>Our Services</h3>
-        <li><a href="/servicefinance" class="CAbtn"><i class="fas fa-long-arrow-right"></i>Finance Management</a></li>
-        <li><a href="/serviceoperation" class="TSbtn"><i class="fas fa-long-arrow-right"></i>Operation Management</a></li>
-        <li><a href="/servicestrategic" class="OSbtn"><i class="fas fa-long-arrow-right"></i>Strategic Management</a></li>
-        <li><a href="/serviceinstitutionleakage" class=" AAbtn"><i class="fas fa-long-arrow-right"></i>Finance Literacy</a></li>
+        @php
+            $services = App\Models\Service::all();
+            // echo($services);        
+        @endphp
+
+@foreach($services as $service =>$values)
+        <li><a href="{{ route('single.service',$values->uniqid) }} class="CAbtn"><i class="fas fa-long-arrow-right"></i>{!! $values->name !!}</a></li>
+       @endforeach
+       
+       
     </div>
     <div class="hfooter">
         <h3>Extras</h3>
