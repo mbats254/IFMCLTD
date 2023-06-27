@@ -268,6 +268,16 @@ class AdminController extends Controller
         //    dd($request->descriptional_listing);
         //    dd(($descriptional_listings));
            $request['descriptional_listing'] = implode(",",$descriptional_listings);
+        if(($request->file('photo')))
+        {
+            $photo = $request->file('photo');
+            $uniqid = uniqid();
+            $request->file('photo')->move(base_path() . '/public/images/', $file_name = str_replace(" ", "_", '/images/'.$request->name.'#' . $uniqid) . "." . $photo->getClientOriginalExtension());
+            // array_diff($request->all(), $request['page_photo']);
+            $request['page_photo'] = $file_name;
+            // dd($request->all());
+        }  
+        
             
          
             // dd(implode(",",$list_item_description));

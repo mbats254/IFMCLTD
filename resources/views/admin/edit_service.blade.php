@@ -71,6 +71,18 @@
                                         </span>
                                     @endif
                                 </div>
+                                <img src="{!! $service->page_photo !!}" alt="no photo at the moment"/>
+                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} description">
+                                     <label class="form-control-label" for="email">{{ __('Page Photo') }}</label>
+ 
+                                     <input type="file" name="photo" id="photo" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}"  autofocus/>
+ 
+                                     @if ($errors->has('name'))
+                                         <span class="invalid-feedback" role="alert">
+                                             <strong>{{ $errors->first('email') }}</strong>
+                                         </span>
+                                     @endif
+                                 </div>
                                 <a class="btn btn-outline-primary btn-sm add_descriptional_listing_btn"  style="float: right;">Add Descriptional Lising Item &nbsp <i class="fa fa-pencil"></i></a>
                                 <a class="btn btn-outline-primary btn-sm"  href="{!! route('all.descriptive_listing',[$service->uniqid]) !!}" style="float: right;">Edit Exisiting Descriptional List Item &nbsp <i class="fa fa-pencil"></i></a>
                                 <div style="display:none" class="descriptive_section">
@@ -96,6 +108,7 @@
                                         </span>
                                     @endif
                                 </div>
+                
                             
 
                                

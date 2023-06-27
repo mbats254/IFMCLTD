@@ -2,10 +2,7 @@
 @extends('sites_files.footers')
 @section('content')
 
-    <!--chat-->
-    <div class="online_chat">
-        <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>
-    </div>
+
     
 <!--video bd-->
 <div class="vid-bg">
@@ -67,7 +64,7 @@
                                 <font>{!! $values->accompanying_text !!}</font>
                             </strong>
                             <div class="m-btn">
-                                <a href="/service" class="f-slider-btn service Sf">Our Services</a>
+                                <a href="/our/services" class="f-slider-btn service Sf">Our Services</a>
                                 <a href="/about" class="f-btn about Af">About Us</a>
                             </div>
                         </div>

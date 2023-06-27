@@ -1,10 +1,7 @@
 @extends('sites_files.footers')
 @section('content')
 
-    <!--chat-->
-    <div class="online_chat">
-        <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>
-    </div>
+
     
 <!--home wehere it happens section-->   
  <section class="p-14">
@@ -14,7 +11,7 @@
   <section class="service-form">
  
             <section class="introd">
-                <p>/ Service </p>
+                <p>/Our/Services </p>
             </section>
             <section class="service-head-body">
                 <div class="srv-heading">
@@ -25,8 +22,8 @@
                 <section class="sv-body">
                 @foreach($services as $service =>$values)
                     <div class="serv-icon si1">
-                        <a href="{{ route('single.service',$values->uniqid) }}" class="isize"><i class="fas fa-balance-scale"></i></a>
-                        <p class="serv-icon-name">{!!  $values->name !!}</p>
+                        <a href="{{ route('single.service',$values->uniqid) }}" class="isize"><i class={!! $values->icon !!}></i>
+                        <p class="serv-icon-name">{!!  $values->name !!}</p></a>
                     </div>
 
                     @endforeach

@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        // 
         Schema::table('services', function ($table) {
-            $table->longtext('icon')->nullable();
-            $table->longtext('what_we_offer')->nullable();
-            $table->longtext('price')->nullable();
-           
-        
-       
-            
+            $table->string('page_photo')->nullable();
+                     
         });
     }
 

@@ -39,7 +39,7 @@
                     <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                            <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="/our/services" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
                             <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
                             <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
@@ -187,7 +187,7 @@
             <h3>Quick Links</h3>
             <li><a href="/" class="home Hf"><i class="fas fa-long-arrow-right"></i>Home</a></li>
             <li><a href="/about" class="about Af"><i class="fas fa-long-arrow-right"></i>About</a></li>
-            <li><a href="/service" class="service Sf"><i class="fas fa-long-arrow-right"></i>Services</a></li>
+            <li><a href="/our/services" class="service Sf"><i class="fas fa-long-arrow-right"></i>Services</a></li>
             <li><a href="/videos" class="international If"><i class="fas fa-long-arrow-right"></i>Videos</a></li>
             <li><a href="/news" class="news Nf"><i class="fas fa-long-arrow-right"></i>News</a></li>
             <li><a href="/contact" class="contact Cf"><i class="fas fa-long-arrow-right"></i>Contact</a></li>

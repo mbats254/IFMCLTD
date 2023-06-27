@@ -1,16 +1,6 @@
 @extends('sites_files.footers')
 @section('content')
- <!--loader-->
- <div class="loader_all" id="loader_all">
-        <div class="l_any">
-            <img src="/img/lder/l3.gif" alt="">
-        </div>
-    </div>
-    <!--chat-->
-    <div class="online_chat">
-        <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>
-    </div>
-    
+     
      <!--book service-->
      <div class="bookform">
         <div class="bookfin kuanileft">
@@ -52,8 +42,8 @@
   <section class="service-form">
   
             <section class="intro-Audit">
-                <p>/ Service -<span>/ Finance Management</span></p>
-                <a href="/service" class="bckbtn1" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
+                <p>/Our/Services -<span>/ Finance Management</span></p>
+                <a href="/our/services" class="bckbtn1" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
                         class="dr1"><i class="fas fa-door-closed"></i></span> Back to Service</a>
             </section>
             <section class="Audit-detail-body">
@@ -90,8 +80,8 @@
   <section class="service-form">
   
        <section class="intro-Outsourcing">
-              <p>/ Service -<span>/ Finance Literacy & Institution Linkages</span></p>
-                <a href="/service" class="bckbtn4" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
+              <p>/Our/Services -<span>/ Finance Literacy & Institution Linkages</span></p>
+                <a href="/our/services" class="bckbtn4" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
                         class="dr1"><i class="fas fa-door-closed"></i></span> Back to Service</a>
             </section>
             <section class="Outsourcing-detail-body">
