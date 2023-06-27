@@ -49,7 +49,7 @@ class SiteController extends Controller
     public function our_services(Request $request)
     {
         $services = Service::get();
-        return view('sites_files.our_services');
+        return view('sites_files.our_services',compact('services'));
     }
 
     public function single_service(Request $request)

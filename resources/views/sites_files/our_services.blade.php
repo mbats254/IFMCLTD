@@ -1,11 +1,6 @@
 @extends('sites_files.footers')
 @section('content')
- <!--loader-->
- <div class="loader_all" id="loader_all">
-        <div class="l_any">
-            <img src="/img/lder/l3.gif" alt="">
-        </div>
-    </div>
+
     <!--chat-->
     <div class="online_chat">
         <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>
@@ -38,23 +33,14 @@
                 </div>
 
                 <section class="sv-body">
-                
+                @foreach($services as $service =>$values)
                     <div class="serv-icon si1">
-                        <a href="/servicefinance" class="isize"><i class="fas fa-balance-scale"></i></a>
-                        <p class="serv-icon-name">Finance Management</p>
+                        <a href="{{ route('single.service',$values->uniqid) }}" class="isize"><i class="fas fa-balance-scale"></i></a>
+                        <p class="serv-icon-name">{!!  $values->name !!}</p>
                     </div>
-                    <div class="serv-icon si1">
-                        <a href="/serviceoperation" class="isize"><i class="fas fa-calculator"></i></a>
-                        <p class="serv-icon-name">Operation & Logistic Management</p>
-                    </div>
-                    <div class="serv-icon si1">
-                        <a href="/servicestrategic" class="isize"><i class="fas fa-cloud"></i></a>
-                        <p class="serv-icon-name">Strategic Management</p>
-                    </div>
-                    <div class="serv-icon si1">
-                        <a href="/serviceinstitutionleakage" class="isize"><i class="fas fa-clone"></i></a>
-                        <p class="serv-icon-name">Finance Literacy & Institution Linkages</p>
-                    </div>
+
+                    @endforeach
+             
               
                     
                 </section>
