@@ -62,8 +62,8 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('Icon') }}</label>
-
-                                    <input type="text" name="icon" id="icon" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}"   autofocus value={!! $service->icon !!}/>
+                                    
+                                    <input type="text" value={!! $service->icon !!} name="icon" id="icon" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" />
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -71,7 +71,8 @@
                                         </span>
                                     @endif
                                 </div>
-                                <img src="{!! $service->page_photo !!}" alt="no photo at the moment"/>
+                                {{-- {!! $service->page_photo !!} --}}
+                                <img src={!! $service->page_photo !!} alt="no photo at the moment"/>
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} description">
                                      <label class="form-control-label" for="email">{{ __('Page Photo') }}</label>
  

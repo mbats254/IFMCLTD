@@ -115,13 +115,19 @@ class AdminController extends Controller
         $photo = $request->file('photo');
         $uniqid = uniqid();
         $request->file('photo')->move(base_path() . '/public/images/', $file_name = str_replace(" ", "_", '/images/'.$request->name . $uniqid) . "." . $photo->getClientOriginalExtension());
-        // dd($request->bio);
+        // dd($request->bio);','', '', 'photo', '', 'phone_number'
         $team_member = Team::create([
             'name' => $request->name,
             'position' => $request->position,
             'photo' => $file_name,
             'bio'=> $request->bio,
-            'uniqid'=> $uniqid
+            'facebook'=> $request->facebook,
+            'instagram'=> $request->instagram,
+            'twitter'=> $request->twitter,
+            'email'=> $request->email,
+            'phone_number'=> $request->phone_number,
+            'uniqid' => $uniqid 
+            
      
             ]);
             //  $user->notify(new WelcomeJudge($user,$product,$product));
