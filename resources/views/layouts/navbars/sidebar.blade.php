@@ -129,6 +129,11 @@
                         <i class="fa fa-list text-primary"></i> {{ __('All Testimonials') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('send.newsletter') }}">
+                        <i class="fa fa-microphone  text-primary"></i> {{ __('Send Newsltter') }}
+                    </a>
+                </li>
                 
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('all.products')}}">

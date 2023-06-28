@@ -15,8 +15,11 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Testimonial;
 use App\Models\FAQ;
+use App\Models\Newsletter;
 use App\Models\Snapshot;
+use App\Models\Subscriber;
 use Illuminate\Support\Facades\Schema;
+use App\Notifications\NewsletterNotification;
 
 
 class AdminController extends Controller
@@ -393,7 +396,31 @@ class AdminController extends Controller
        return redirect()->back();
 
 
+
+
     }
     
+    public function send_newsletter(Request $request)
+    {
+        return view('admin.send_newsletter');
+    }
 
+    public function post_newsletter(Request $request)
+    {
+        $newsletter = Newsletter::create([
+            'title' => $request->title,
+            'message' => $request->message,
+            'uniqid' => uniqid()
+        ]);
+        // dd($newsletter);
+        $subscribers = Subscriber::get();
+        foreach($subscribers as $subscriber)
+        {
+            $subscriber->notify(new NewsletterNotification($subscriber, $newsletter));
+        }
+      Log::info( $newsletter->title."'s Sent Sucessfully!");
+       $request->session()->flash("success",$newsletter->title."'s Sent Sucessfully!");
+       return redirect()->back();
+    
+    }
 }

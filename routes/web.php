@@ -31,6 +31,7 @@ Route::get('/add/product', [App\Http\Controllers\AdminController::class, 'add_pr
 Route::get('/add/category', [App\Http\Controllers\AdminController::class, 'add_category'])->name('add.category');
 Route::get('/add/faq', [App\Http\Controllers\AdminController::class ,'add_faq'])->name('add.faq');
 Route::get('/admin/all/products', [App\Http\Controllers\AdminController::class, 'all_product'])->name('all.products');
+Route::get('/admin/send/newsletter', [App\Http\Controllers\AdminController::class, 'send_newsletter'])->name('send.newsletter');
 Route::get('/admin/all/testimonials', [App\Http\Controllers\AdminController::class, 'all_testimonials'])->name('all.testimonials');
 Route::get('/admin/all/services', [App\Http\Controllers\AdminController::class ,'all_services'])->name('all.services');
 Route::get('/admin/all/descriptive_listing/{uniqid}', [App\Http\Controllers\AdminController::class ,'all_descriptive_listing'])->name('all.descriptive_listing');
@@ -57,6 +58,7 @@ Route::post('/post/team/member', [App\Http\Controllers\AdminController::class,'p
 Route::post('/post/service', [App\Http\Controllers\AdminController::class,'post_service'])->name('post.service');
 Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'post_testimonial'])->name('post.testimonial');
 Route::post('/post/edited/contact/information', [App\Http\Controllers\AdminController::class,'post_edit_contact_information'])->name('post.edit.contact.information');
+Route::post('/post/newsletter', [App\Http\Controllers\AdminController::class,'post_newsletter'])->name('post.newsletter');
 });
 
 // Site Routes
