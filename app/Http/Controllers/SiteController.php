@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SiteContent;
 use App\Models\Service;
+use App\Models\User;
 use App\Models\ContactInformation;
 use App\Models\ContactUs;
 use App\Models\Snapshot;
@@ -14,7 +15,9 @@ use App\Models\FAQ;
 use App\Models\Testimonial;
 use App\Models\Subscriber;
 use App\Notifications\ContactUsIFMCLTD;
+use Illuminate\Support\Facades\Hash;
 use App\Notifications\WelcomeSubscriber;
+
 use Illuminate\Support\Facades\Schema;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Log;
@@ -111,4 +114,27 @@ class SiteController extends Controller
         return redirect()->back();
         
     }
+
+    public function password_update(Request $request)
+    {
+        $user = User::where('uniqid','=',$request->uniqid)->first();
+        return view('auth.reset',compact('user'));
+    }
+
+    public function password_update_post(Request $request)
+    {
+        $user = User::where('email','=',$request->email)->first();
+        // dd($request->all());
+        $user->update([
+            'password' =>  Hash::make($request->password)
+        ]);
+
+        Log::info( "Password Chanegd Successfully!");
+        $request->session()->flash("success", "Password Chanegd Successfully!");
+        return redirect()->back();
+    }
+
+   
+
+    
 }
