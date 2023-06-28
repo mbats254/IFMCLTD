@@ -14,9 +14,11 @@ use App\Models\Team;
 use App\Models\FAQ;
 use App\Models\Testimonial;
 use App\Models\Subscriber;
+use App\Models\ComplainQuestionSuggestion;
 use App\Notifications\ContactUsIFMCLTD;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\WelcomeSubscriber;
+use App\Notifications\ComplainQuestionSuggestionNotification;
 
 use Illuminate\Support\Facades\Schema;
 use App\Models\Blog;
@@ -35,8 +37,8 @@ class SiteController extends Controller
         $testimonials = Testimonial::get();
         $contact_information = ContactInformation::first();
         // dd($contact_information);
-        $suggestion_complain_question = FAQ::where('suggestion_complain_question' ,'=!', '')->get();
-        return view('sites_files.welcome',compact('contact_information','testimonials','suggestion_complain_question','faqs','team_members','site_content','services','snapshots'));
+        // $suggestion_complain_question = FAQ::where('suggestion_complain_question' ,'=!', '')->get();
+        return view('sites_files.welcome',compact('contact_information','testimonials','faqs','team_members','site_content','services','snapshots'));
     }
     public function about_us(Request $request)
     {
@@ -68,7 +70,36 @@ class SiteController extends Controller
 
     public function post_suggestion_complain_question(Request $request)
     {
-        $suggestion_complain_question = $request->suggestion_complain_question;
+        // $suggestion_complain_question = $request->complaint;
+        // dd(array_keys($request->all()));
+        unset($request['_token']);
+       
+        $suggestion_complain_question = ComplainQuestionSuggestion::create([
+            "question" => $request->question,
+            "suggestion" => $request->suggestion,
+            "complaint" => $request->complaint,
+            "uniqid" => uniqid()
+        ]);
+        $alladmins = Admin::all();
+        foreach(array_keys($request->all()) as $array_key)
+        {
+            // dd($array_key);
+            if($request->$array_key !== null )
+            {
+                $field = $array_key;
+            }
+        
+        // dd($request[$field]);
+        for($i=0;$i<sizeof($alladmins);$i++)
+        {
+            $alladmins[$i]->notify(new ComplainQuestionSuggestionNotification($alladmins[$i],$request[$field],$field));
+            
+        }
+
+    }
+        Log::info("Message Sent Sucessfully!");
+        $request->session()->flash("success","Message Sent Sucessfully!");
+        return redirect()->back();
     }
 
     public function contact_us_post(Request $request)

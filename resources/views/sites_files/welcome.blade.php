@@ -214,7 +214,7 @@
                             <a href="{!! $values->facebook !!}" class="center"  style="text-decoration: none;">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            < href={!! $values->twitter !!} class="center"  style="text-decoration: none;">
+                            <a href={!! $values->twitter !!} class="center"  style="text-decoration: none;">
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href={!! $values->instagram !!}  class="center"  style="text-decoration: none;">
@@ -257,9 +257,9 @@
                     </div>
                     <div class="qstn-content">
                         <p class="text">You can reach us at the 7th cloud high in the cloud or.... You can email us at
-                            <a href="#" class="k">kennedymwaura155@gmail.com</a>
+                            <a href="#" class="k">{!!  $contact_information->email !!}</a>
                         </p>
-                        <p class="text">You can also talk to us through our office on 0712 044 160 or 0735 257 803<br>
+                        <p class="text">You can also talk to us through our office on {!!  $contact_information->phone_number !!}<br>
                         &#128521; </p>
                     </div>
             
@@ -267,16 +267,36 @@
                 @endforeach
                 
                 <div class="qstn-item">
-                    <form mathod="POST" action="{!! route('post.suggestion_complain_question') !!}">
+                    <form method="POST" action="{!! route('post.suggestion_complain_question') !!}">
+                        @csrf
                         <div class="qstn-head">
-                            <h3>Any Suggestion or Complain or Question?</h3>
+                            <h3>Any Question?</h3>
                             <span><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="qstn-content">
-                            <textarea class="form-control" id="suggestion_complain_question" name="suggestion_complain_question"
+                            <textarea class="form-control" name="question" id="suggestion_complain_question" name="suggestion_complain_question"
                                 placeholder="Message"></textarea><br>
                             <button class="btn-3">Submit</button><br>&#128521;
                         </div>
+                        <div class="qstn-head">
+                            <h3>Any Suggestion </h3>
+                            <span><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="qstn-content">
+                            <textarea class="form-control" name="suggestion" id="suggestion_complain_question" name="suggestion_complain_question"
+                                placeholder="Message"></textarea><br>
+                            <button class="btn-3">Submit</button><br>&#128521;
+                        </div>
+                        <div class="qstn-head">
+                            <h3>Any  Complain ?</h3>
+                            <span><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="qstn-content">
+                            <textarea class="form-control" name="complaint" id="suggestion_complain_question" name="suggestion_complain_question"
+                                placeholder="Message"></textarea><br>
+                            <button class="btn-3">Submit</button><br>&#128521;
+                        </div>
+                       
                     </form>
                     
                 
