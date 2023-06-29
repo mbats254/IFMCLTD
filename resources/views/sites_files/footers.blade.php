@@ -18,8 +18,11 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="/fontawesome/css/all.min.css">
+    <link href="/argon/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+     <link href="/argon/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+     <link type="text/css" href="/argon/css/argon.css?v=1.0.0" rel="stylesheet">
+     <!-- Scripts -->
 
-    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
@@ -45,20 +48,10 @@
                             <li class="nav-item"><a href="/contact/us" class="nav-link">Contact</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
-                    {{-- <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                                                       
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -78,7 +71,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul> --}}
+                    </ul>
                 </div>
             </div>
 </nav>
@@ -172,8 +165,39 @@
     </div>
 </footer>
 <script src="/js/jQuery.js"></script>
+<script src="/argon/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/argon/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/js/triggerscript.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+setTimeout(function () {
+    toastr.options = {
+        closeButton: true,
+        progressBar: true,
+        showMethod: 'slideDown',
+        timeOut: 10000
+    };
+    @if(!is_null(Session::get('success')))
+    toastr.success('{!! Session::get('success') !!}',
+        'Success');
+    @endif
+    @if(!is_null(Session::get('error')))
+    toastr.error('{!! Session::get('error') !!}',
+        'Error !!');
+    @endif
+    @if (count($errors) > 0)
+    @foreach ($errors->all() as $error)
+    toastr.error('{!! $error !!}', 'Validation error !!');
+    @endforeach
+    @endif
+    @if(!is_null(Session::get('info')))
+    toastr.info('{!! Session::get('info') !!}',
+        'Info');
+    @endif
+}, 1300);
+});
+</script>
 <script type="text/javascript">
       /*-------bookform------*/
       $(document).on('click', '.bsbtn', function () {
@@ -296,5 +320,10 @@
         }
     }
 </script>
+ <!-- Argon JS -->
+ <script src="/argon/js/argon.js?v=1.0.0"></script>
+ <script src="/argon/js/toastr/toastr.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+</body>
 </body>
 </html>

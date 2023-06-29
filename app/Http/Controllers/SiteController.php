@@ -26,6 +26,11 @@ use Illuminate\Support\Facades\Log;
 class SiteController extends Controller
 {
 
+    public function admin(Request $request)
+    {
+        return redirect()->route('login');
+    }
+        
     public function welcome(Request $request)
     {
         $site_content = SiteContent::orderBy('id','desc')->first();

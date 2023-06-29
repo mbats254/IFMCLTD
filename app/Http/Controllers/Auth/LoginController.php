@@ -30,7 +30,7 @@ class LoginController extends Controller
      * @var string
      */
     // protected $redirectTo = RouteServiceProvider::HOME;
-    public function redirectTo(Request $request)
+    public function redirectTo()
     {
         // User role based on role_id 1 for applicant and 2 for employer
 
@@ -41,12 +41,12 @@ class LoginController extends Controller
         switch ($user->role) {
             case "admin":
                 Log::info( "Login Successful");
-                $request->session()->flash("success",  "Login Successful!");               
+                
                 return route('home');
                 break;
             case 2:
         Log::info( "Unauthorised Login.Access Denied!!");
-        $request->session()->flash("error",  "Unauthorised Login.Access Denied!!");
+
         return redirect()->back();
                 break;
            

@@ -64,6 +64,7 @@ Route::post('/post/newsletter', [App\Http\Controllers\AdminController::class,'po
 // Site Routes
 
 Route::get('/', [App\Http\Controllers\SiteController::class,'welcome'])->name('Welcome.us');
+Route::get('/admin', [App\Http\Controllers\SiteController::class,'admin'])->name('admin.redirect');
 
 Route::get('/about', [App\Http\Controllers\SiteController::class,'about_us'])->name('about.us');
 Route::get('/contact/us', [App\Http\Controllers\SiteController::class,'contact_us'])->name('contact.us');
@@ -72,6 +73,6 @@ Route::post('/post/suggestion/or/question/or/complain', [App\Http\Controllers\Si
 Route::get('/single/service/{uniqid}', [App\Http\Controllers\SiteController::class,'single_service'])->name('single.service');
 Route::post('/contact/us/post', [App\Http\Controllers\SiteController::class,'contact_us_post'])->name('contact.us.post');
 Route::post('/newsletter/subscribe', [App\Http\Controllers\SiteController::class,'newsletter_subscribe'])->name('newsletter.subscribe');
-Route::post('/password/email/reset', [App\Http\Controllers\ForgotPasswordController::class,'password_email_reset'])->name('password.email.reset');
+Route::post('/password/email/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class,'password_email_reset'])->name('password.email.reset');
 Route::post('/password/update/post', [App\Http\Controllers\SiteController::class,'password_update_post'])->name('password.update.post');
 Route::get('password/update/form/{uniqid}', [App\Http\Controllers\SiteController::class,'password_update'])->name('password.update');
