@@ -105,6 +105,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.blog.post')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add New Blog Post') }}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('add.team.member') }}">
                         <i class="fa fa-plus text-primary"></i> {{ __('Add Team Member') }}
                     </a>
@@ -122,6 +127,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('all.services') }}">
                         <i class="fa fa-list text-primary"></i> {{ __('All Services') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.blog.posts') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Blog Posts') }}
                     </a>
                 </li>
                 <li class="nav-item">

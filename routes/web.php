@@ -34,6 +34,7 @@ Route::get('/admin/all/products', [App\Http\Controllers\AdminController::class, 
 Route::get('/admin/send/newsletter', [App\Http\Controllers\AdminController::class, 'send_newsletter'])->name('send.newsletter');
 Route::get('/admin/all/testimonials', [App\Http\Controllers\AdminController::class, 'all_testimonials'])->name('all.testimonials');
 Route::get('/admin/all/services', [App\Http\Controllers\AdminController::class ,'all_services'])->name('all.services');
+Route::get('/admin/all/blog/posts', [App\Http\Controllers\AdminController::class ,'all_blog_posts'])->name('all.blog.posts');
 Route::get('/admin/all/descriptive_listing/{uniqid}', [App\Http\Controllers\AdminController::class ,'all_descriptive_listing'])->name('all.descriptive_listing');
 Route::get('/admin/edit/product/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_product'])->name('edit.product');
 Route::get('/admin/edit/service/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_service'])->name('edit.service');
@@ -41,9 +42,11 @@ Route::get('/admin/edit/contact/information/', [App\Http\Controllers\AdminContro
 Route::get('/admin/delete/product/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_product'])->name('delete.product');
 Route::get('/admin/descriptive/listing/{uniqid}/{index}', [App\Http\Controllers\AdminController::class,'descriptive_listing'])->name('delete.descriptive_listing');
 Route::get('/admin/delete/service/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_service'])->name('delete.service');
+Route::get('/admin/delete/blog/post/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_blog_post'])->name('delete.blog_post');
 Route::get('/add/testimonial', [App\Http\Controllers\AdminController::class,'add_testimonial'])->name('add.testimonial');
 Route::post('/post/product', [App\Http\Controllers\AdminController::class,'post_product'])->name('post.product');
 Route::post('/post/snapshot', [App\Http\Controllers\AdminController::class,'post_snapshot'])->name('post.snapshot');
+Route::get('/add/blog/post', [App\Http\Controllers\AdminController::class,'add_blog_post'])->name('add.blog.post');
 // Route::get('/add/snapshot', [App\Http\Controllers\AdminController::class,'add_snapshot'])->name('add.snapshot');
 Route::get('/add/service', [App\Http\Controllers\AdminController::class,'add_service'])->name('add.service');
 Route::get('/add/site/content', [App\Http\Controllers\AdminController::class,'add_site_content'])->name('add.site.content');
@@ -59,6 +62,7 @@ Route::post('/post/service', [App\Http\Controllers\AdminController::class,'post_
 Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'post_testimonial'])->name('post.testimonial');
 Route::post('/post/edited/contact/information', [App\Http\Controllers\AdminController::class,'post_edit_contact_information'])->name('post.edit.contact.information');
 Route::post('/post/newsletter', [App\Http\Controllers\AdminController::class,'post_newsletter'])->name('post.newsletter');
+Route::post('/post/blog/post', [App\Http\Controllers\AdminController::class,'post_blog_post'])->name('post.blog.post');
 });
 
 // Site Routes
@@ -76,3 +80,4 @@ Route::post('/newsletter/subscribe', [App\Http\Controllers\SiteController::class
 Route::post('/password/email/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class,'password_email_reset'])->name('password.email.reset');
 Route::post('/password/update/post', [App\Http\Controllers\SiteController::class,'password_update_post'])->name('password.update.post');
 Route::get('password/update/form/{uniqid}', [App\Http\Controllers\SiteController::class,'password_update'])->name('password.update');
+Route::get('/news', [App\Http\Controllers\SiteController::class,'blog_news'])->name('blog.news');

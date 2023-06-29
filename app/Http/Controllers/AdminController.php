@@ -18,6 +18,7 @@ use App\Models\FAQ;
 use App\Models\Newsletter;
 use App\Models\Snapshot;
 use App\Models\Subscriber;
+
 use Illuminate\Support\Facades\Schema;
 use App\Notifications\NewsletterNotification;
 
@@ -26,6 +27,42 @@ class AdminController extends Controller
 {
     // 
 
+    public function delete_blog_post(Request $request)
+    {
+        $blog_post = Blog::where('uniqid','=',$request->uniqid)->first();
+        $blog_post->delete();
+        Log::info($blog_post->title." deleted Successfully.");
+        $request->session()->flash("error", $blog_post->title." deleted Successfully.");
+        return redirect()->back();
+
+    }
+    public function all_blog_posts(Request $request)
+    {
+        $blog_posts = Blog::get();
+        // dd($blog_posts);
+        return view('admin.all_blog_posts',compact('blog_posts'));
+    }
+    public function post_blog_post(Request $request)
+    {
+        $photo = $request->file('photo');
+        $uniqid = uniqid();
+        $request->file('photo')->move(base_path() . '/public/images/', $file_name = str_replace(" ", "_", '/images/'.$request->name . $uniqid) . "." . $photo->getClientOriginalExtension());
+        $blog_post  = Blog::create([
+            'title' => $request->title,
+             'paragraph'  => $request->paragraph, 
+             'photo' => $file_name, 
+             'uniqid' => $uniqid
+        ]);
+
+        Log::info($blog_post->title." Posted Successfully.");
+        $request->session()->flash("success", $blog_post->title." Posted Successfully.");
+        return redirect()->back();
+    }
+
+    public function add_blog_post(Request $request)
+    {
+        return view('admin.add_blog_post');
+    }
     public function edit_contact_information(Request $request)
     {
         $contact_information = ContactInformation::first();

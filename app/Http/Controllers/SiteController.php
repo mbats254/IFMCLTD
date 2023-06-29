@@ -170,6 +170,12 @@ class SiteController extends Controller
         return redirect()->back();
     }
 
+    public function blog_news(Request $request)
+    {
+        
+        return view('news');
+    }
+
    
 
     
