@@ -2607,6 +2607,10 @@ align-items: flex-start;
     .feature .abouti .right .serv-icon {
         margin-top: 30px;
     }
+   .ceo_img img{
+        width:20px;
+        height:20px;
+    }
 }
 @media screen and (max-width:408px){
     .icons li a {
