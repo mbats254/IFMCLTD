@@ -196,7 +196,17 @@ setTimeout(function () {
         'Info');
     @endif
 }, 1300);
+
+
 });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.continue_reading').click(function(){
+    // alert('sdsdsdf')
+    $('.subject-class').fadeIn();
+})
+})
 </script>
 <script type="text/javascript">
       /*-------bookform------*/
@@ -320,6 +330,45 @@ setTimeout(function () {
         }
     }
 </script>
+<script type="text/javascript">
+    //chat
+   
+  
+      /*--continue reading button--*/
+
+            //next & Previous
+            var ondisplayDiv = 0;
+   
+ 
+    var dateDisplay = 0;
+    function datePage() {
+        $(".recent-kaiga-details").hide();
+        $(".recent-kaiga-details:eq(" + dateDisplay + ")").show();
+    }
+    datePage()
+    var commentsDisplay = 0;
+    function commentPage() {
+        $(".rcomments-kaiga-details").hide();
+        $(".rcomments-kaiga-details:eq(" + commentsDisplay + ")").show();
+    }
+    commentPage()
+    var relatedDisplay = 0;
+ 
+   
+   
+    function ChangePhase(){
+        var details_section = document.getElementsByClassName("");
+        $(".subject-kaiga").fadeIn();
+        // $(".subject-kaiga:eq(" + ondisplayDiv + ")").show();
+       
+    }
+   
+    
+    
+    
+</script>
+
+
  <!-- Argon JS -->
  <script src="/argon/js/argon.js?v=1.0.0"></script>
  <script src="/argon/js/toastr/toastr.min.js"></script>

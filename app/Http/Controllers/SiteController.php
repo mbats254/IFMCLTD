@@ -172,8 +172,10 @@ class SiteController extends Controller
 
     public function blog_news(Request $request)
     {
-        
-        return view('news');
+        $blog_posts = Blog::get();
+        // dd($blog_posts);
+        return view('sites_files.blog_posts',compact('blog_posts'));
+        // return view('news',compact('blog_posts'));
     }
 
    
