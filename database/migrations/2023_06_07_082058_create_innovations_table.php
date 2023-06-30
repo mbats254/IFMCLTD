@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('link');
-            $table->string('media');
-            $table->string('type');
+            $table->string('media')->nullable();
+            $table->string('type')->nullable();
             $table->string('uniqid');
             $table->timestamps();
         });

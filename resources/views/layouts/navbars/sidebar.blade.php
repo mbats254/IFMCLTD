@@ -119,6 +119,11 @@
                         <i class="fa fa-plus text-primary"></i> {{ __('Add Testimonial') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.innovation') }}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Video Innovations') }}
+                    </a>
+                </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('all.products') }}">
                         <i class="fa fa-list text-primary"></i> {{ __('All Products') }}

@@ -22,9 +22,16 @@ use App\Notifications\ComplainQuestionSuggestionNotification;
 
 use Illuminate\Support\Facades\Schema;
 use App\Models\Blog;
+use App\Models\Innovation;
 use Illuminate\Support\Facades\Log;
 class SiteController extends Controller
 {
+
+    public function our_videos(Request $request)
+    {
+        $innovation_posts = Innovation::get();
+        return view('sites_files.our_videos',compact('innovation_posts'));
+    }
 
     public function admin(Request $request)
     {

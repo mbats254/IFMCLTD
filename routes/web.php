@@ -63,6 +63,9 @@ Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'p
 Route::post('/post/edited/contact/information', [App\Http\Controllers\AdminController::class,'post_edit_contact_information'])->name('post.edit.contact.information');
 Route::post('/post/newsletter', [App\Http\Controllers\AdminController::class,'post_newsletter'])->name('post.newsletter');
 Route::post('/post/blog/post', [App\Http\Controllers\AdminController::class,'post_blog_post'])->name('post.blog.post');
+Route::get('/add/innovation/videos', [App\Http\Controllers\AdminController::class,'add_innovation'])->name('add.innovation');
+Route::post('/post/innovation', [App\Http\Controllers\AdminController::class,'post_innovation'])->name('post.innovation.post');
+
 });
 
 // Site Routes
@@ -79,5 +82,7 @@ Route::post('/contact/us/post', [App\Http\Controllers\SiteController::class,'con
 Route::post('/newsletter/subscribe', [App\Http\Controllers\SiteController::class,'newsletter_subscribe'])->name('newsletter.subscribe');
 Route::post('/password/email/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class,'password_email_reset'])->name('password.email.reset');
 Route::post('/password/update/post', [App\Http\Controllers\SiteController::class,'password_update_post'])->name('password.update.post');
-Route::get('password/update/form/{uniqid}', [App\Http\Controllers\SiteController::class,'password_update'])->name('password.update');
-Route::get('/news', [App\Http\Controllers\SiteController::class,'blog_news'])->name('blog.news');
+Route::get('password/update/form/{uniqid}', [App\Http\Controllers\SiteController::class,'password_update'])->name('password.update.get');
+Route::get('/blog/news', [App\Http\Controllers\SiteController::class,'blog_news'])->name('blog.news');
+Route::get('/innovation/videos', [App\Http\Controllers\SiteController::class,'our_videos'])->name('our.videos');
+

@@ -460,4 +460,23 @@ class AdminController extends Controller
        return redirect()->back();
     
     }
+
+    public function add_innovation(Request $request)
+    {
+        return view('admin.add_innovation');
+    }
+
+    public function post_innovation(Request $request)
+    {
+        // dd($request->name);
+        $post_innovation = Innovation::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'link' => $request->link,
+            'uniqid' => uniqid()
+        ]);
+       Log::info( $post_innovation->name."'s Added Sucessfully!");
+       $request->session()->flash("success",$post_innovation->name."'s post_innovation Sucessfully!");
+       return redirect()->back();
+    }
 }
