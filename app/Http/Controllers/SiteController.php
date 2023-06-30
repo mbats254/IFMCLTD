@@ -74,7 +74,7 @@ class SiteController extends Controller
 
     public function single_service(Request $request)
     {
-        $single_service = Service::where('uniqid', '=', $request->uniqid)->get();
+        $single_service = Service::where('uniqid', '=', $request->uniqid)->first();
         // dd($single_service);
         return view('sites_files.services_single',compact('single_service'));
         
