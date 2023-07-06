@@ -39,23 +39,13 @@
                             <h6 class="heading-small text-muted mb-4">{{ __('Collect Site Contents information') }}</h6>
 
                             <div class="pl-lg-4">
-                               <div class="form-group{{ $errors->has('title') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="title">{{ __('company summary') }}</label>
-
-                                    <input type="text" name="company_summary" id="company_summary" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('company_summary') }}" required autofocus>
-
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                               
 
 
                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('vision') }}</label>
 
-                                    <textarea type="text" name="vision" id="vision" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="vision" id="vision" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}"  required autofocus>{!!  $site_content->vision !!}</textarea>
 
                                     @if ($errors->has('vision'))
                                         <span class="invalid-feedback" role="alert">
@@ -66,7 +56,7 @@
                                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('mission') }}</label>
 
-                                    <textarea type="text" name="mission" id="mission" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="mission" id="mission" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->mission }}</textarea>
 
                                     @if ($errors->has('mission'))
                                         <span class="invalid-feedback" role="alert">
@@ -74,21 +64,11 @@
                                         </span>
                                     @endif
                                 </div>
-                               <div class="form-group{{ $errors->has('innovation_summary') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('innovation_summary') }}</label>
-
-                                    <textarea type="text" name="innovationn_summary" id="innovationn_summary" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
-
-                                    @if ($errors->has('innovationn_summary'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('innovationn_summary') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                           
                                <div class="form-group{{ $errors->has('our_goal') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('our goal') }}</label>
 
-                                    <textarea type="text" name="our_goal" id="our_goal" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('our_goal') }}" required autofocus></textarea>
+                                    <textarea type="text" name="our_goal" id="our_goal" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->our_goal }}</textarea>
 
                                     @if ($errors->has('innovationn_summary'))
                                         <span class="invalid-feedback" role="alert">
@@ -96,29 +76,31 @@
                                         </span>
                                     @endif
                                 </div>
-                               <div class="form-group{{ $errors->has('training_program_summary') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('training_program_summary') }}</label>
+                                
+                               <div class="form-group{{ $errors->has('about_home_paragraph') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="email">{{ __('About Home Paragraph') }}</label>
 
-                                    <textarea type="text" name="training_program_summary" id="training_program_summary" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="text" name="about_home_paragraph" id="about_home_paragraph" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->about_home_paragraph }}</textarea>
 
-                                    @if ($errors->has('training_program_summary'))
+                                    @if ($errors->has('about_home_paragraph'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('training_program_summary') }}</strong>
+                                            <strong>{{ $errors->first('about_home_paragraph') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                               <div class="form-group{{ $errors->has('snapshot_array') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="email">{{ __('snapshot_array') }}</label>
+                               <div class="form-group{{ $errors->has('about_us') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="about_us">{{ __('about_us') }}</label>
 
-                                    <textarea type="file" multiple name="snapshot_array" id="snapshot_array" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
+                                    <textarea type="file" multiple name="about_us" id="about_us" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="" required autofocus>{{ $site_content->about_us }}</textarea>
 
-                                    @if ($errors->has('snapshot_array'))
+                                    @if ($errors->has('about_us'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('snapshot_array') }}</strong>
+                                            <strong>{{ $errors->first('about_us') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                              
+                               <input type="hidden" name="snapshot_array" value="default"/>
+                               
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

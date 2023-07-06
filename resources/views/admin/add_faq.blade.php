@@ -1,8 +1,8 @@
 
-@extends('layouts.app', ['title' => __('faq Management')])
+@extends('layouts.app', ['title' => __('F.A.Q Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Add New faq')])
+    @include('users.partials.header', ['title' => __('Add New Frequently Asked Question')])
     <style type="text/css">
         .ck-editor__editable_inline {
             min-height: 500px;
@@ -16,7 +16,7 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('faqs Management') }}</h3>
+                                <h3 class="mb-0">{{ __('FAQs Management') }}</h3>
                             </div>
                             <div class="col-4 text-right">
                                 {{-- @if($refer !== null) --}}

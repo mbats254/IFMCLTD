@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,8 +29,29 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    public function redirectTo()
+    {
+        // User role based on role_id 1 for applicant and 2 for employer
 
+        $user = Auth::user();
+        // dd($role->role);
+        // Check user role
+
+        switch ($user->role) {
+            case "admin":
+                Log::info( "Login Successful");
+                
+                return route('home');
+                break;
+            case 2:
+        Log::info( "Unauthorised Login.Access Denied!!");
+
+        return redirect()->back();
+                break;
+           
+        }
+    }
     /**
      * Create a new controller instance.
      *

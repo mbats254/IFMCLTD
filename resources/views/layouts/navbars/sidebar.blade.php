@@ -5,8 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="/home">
-            <img src="/site/images/TOM.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand pt-0" href="/">
+            <img src="/img/me.png" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -73,15 +73,25 @@
                     </a>
                 </li>
 
-              
+{{--               
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.product')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Product') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Product') }}
+                    </a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.service')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Service') }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('add.service')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Service') }}
+                    <a class="nav-link" href="{{route('add.snap.shot')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Snapshot') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('edit.contact.informtion')}}">
+                        <i class="fa fa-pen text-primary"></i> {{ __('Edit Contact Information') }}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -91,27 +101,52 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('add.site.content')}}">
-                        <i class="fa fa-gavel text-primary"></i> {{ __('Add Site Content') }}
+                        <i class="fa fa-pen text-primary"></i> {{ __('Edit Site Content') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('add.blog.post')}}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add New Blog Post') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('add.team.member') }}">
-                        <i class="fa fa-list text-primary"></i> {{ __('Add Team Member') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Team Member') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('add.testimonial') }}">
-                        <i class="fa fa-list text-primary"></i> {{ __('Add Testimonial') }}
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Testimonial') }}
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('add.innovation') }}">
+                        <i class="fa fa-plus text-primary"></i> {{ __('Add Video Innovations') }}
+                    </a>
+                </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('all.products') }}">
                         <i class="fa fa-list text-primary"></i> {{ __('All Products') }}
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('all.services') }}">
                         <i class="fa fa-list text-primary"></i> {{ __('All Services') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.blog.posts') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Blog Posts') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.testimonials') }}">
+                        <i class="fa fa-list text-primary"></i> {{ __('All Testimonials') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('send.newsletter') }}">
+                        <i class="fa fa-microphone  text-primary"></i> {{ __('Send Newsltter') }}
                     </a>
                 </li>
                 

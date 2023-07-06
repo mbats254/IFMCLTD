@@ -9,6 +9,6 @@ class Team extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', "position", 'bio','photo', 'uniqid'
+        'name', "position", 'bio','photo', 'uniqid', 'facebook','instagram', 'twitter', 'photo', 'email', 'phone_number'
     ];
 }

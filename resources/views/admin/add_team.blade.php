@@ -55,9 +55,7 @@
                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="email">{{ __('Position') }}</label>
 
-                                    <textarea type="text" name="position" id="position" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus></textarea>
-
-                                    @if ($errors->has('name'))
+                                    <input type="text" name="position" id="position" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus/>                                    @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
@@ -81,6 +79,29 @@
 
                                     <input type="file" name="photo" id="photo" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('') }}" value="{{ old('email') }}" required autofocus/>
 
+                                    @if ($errors->has('photo'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('photo') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                               <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="bio">{{ __('Phone Number') }}</label>
+
+                                    <input type="text" name="phone_number" id="phone_number" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('phone number') }}" value="{{ old('phone_number') }}" required autofocus/>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                               <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="bio">{{ __('Facebook Link') }}</label>
+
+                                    <input type="text" name="facebook" id="facebook" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('link to facebook') }}" value="{{ old('facebook') }}" required autofocus/>
+
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -88,10 +109,41 @@
                                     @endif
                                 </div>
 
-                               
+                               <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="bio">{{ __('Instagram Link') }}</label>
 
+                                    <input type="text" name="instagram" id="instagram" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('link to instagram') }}" value="{{ old('instagram') }}" required autofocus/>
 
-                                    
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                         
+                                <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="bio">{{ __('Twitter Link') }}</label>
+
+                                    <input type="text" name="twitter" id="twitter" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('link to twitter') }}" value="{{ old('twitter') }}" required autofocus/>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                         
+                                <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="bio">{{ __('Email Link') }}</label>
+
+                                    <input type="text" name="email" id="email" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('email address') }}" value="{{ old('email') }}" required autofocus/>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
 
 
                                 <div class="text-center">

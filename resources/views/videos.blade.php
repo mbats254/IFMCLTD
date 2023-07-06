@@ -191,7 +191,7 @@
                         
                        <h1>5.</h1>
                         <div class="vdetail">
-                        <h1>Important solutions for collapsing cooperatives</h1>
+                        <h1>Important Solutions for collapsing cooperatives</h1>
                         <P>4 Important solutions for collapsing cooperatives</P>
                        </div>
                         </div>

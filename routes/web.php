@@ -31,15 +31,26 @@ Route::get('/add/product', [App\Http\Controllers\AdminController::class, 'add_pr
 Route::get('/add/category', [App\Http\Controllers\AdminController::class, 'add_category'])->name('add.category');
 Route::get('/add/faq', [App\Http\Controllers\AdminController::class ,'add_faq'])->name('add.faq');
 Route::get('/admin/all/products', [App\Http\Controllers\AdminController::class, 'all_product'])->name('all.products');
+Route::get('/admin/send/newsletter', [App\Http\Controllers\AdminController::class, 'send_newsletter'])->name('send.newsletter');
+Route::get('/admin/all/testimonials', [App\Http\Controllers\AdminController::class, 'all_testimonials'])->name('all.testimonials');
 Route::get('/admin/all/services', [App\Http\Controllers\AdminController::class ,'all_services'])->name('all.services');
+Route::get('/admin/all/blog/posts', [App\Http\Controllers\AdminController::class ,'all_blog_posts'])->name('all.blog.posts');
+Route::get('/admin/all/descriptive_listing/{uniqid}', [App\Http\Controllers\AdminController::class ,'all_descriptive_listing'])->name('all.descriptive_listing');
 Route::get('/admin/edit/product/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_product'])->name('edit.product');
 Route::get('/admin/edit/service/{uniqid}', [App\Http\Controllers\AdminController::class,'edit_service'])->name('edit.service');
+Route::get('/admin/edit/contact/information/', [App\Http\Controllers\AdminController::class,'edit_contact_information'])->name('edit.contact.informtion');
 Route::get('/admin/delete/product/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_product'])->name('delete.product');
+Route::get('/admin/descriptive/listing/{uniqid}/{index}', [App\Http\Controllers\AdminController::class,'descriptive_listing'])->name('delete.descriptive_listing');
 Route::get('/admin/delete/service/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_service'])->name('delete.service');
+Route::get('/admin/delete/blog/post/{uniqid}', [App\Http\Controllers\AdminController::class,'delete_blog_post'])->name('delete.blog_post');
 Route::get('/add/testimonial', [App\Http\Controllers\AdminController::class,'add_testimonial'])->name('add.testimonial');
 Route::post('/post/product', [App\Http\Controllers\AdminController::class,'post_product'])->name('post.product');
+Route::post('/post/snapshot', [App\Http\Controllers\AdminController::class,'post_snapshot'])->name('post.snapshot');
+Route::get('/add/blog/post', [App\Http\Controllers\AdminController::class,'add_blog_post'])->name('add.blog.post');
+// Route::get('/add/snapshot', [App\Http\Controllers\AdminController::class,'add_snapshot'])->name('add.snapshot');
 Route::get('/add/service', [App\Http\Controllers\AdminController::class,'add_service'])->name('add.service');
 Route::get('/add/site/content', [App\Http\Controllers\AdminController::class,'add_site_content'])->name('add.site.content');
+Route::get('/add/snap/shot', [App\Http\Controllers\AdminController::class,'add_snap_shot'])->name('add.snap.shot');
 Route::post('/post/site/content', [App\Http\Controllers\AdminController::class,'post_site_content'])->name('post.site_content');
 Route::post('/post/edit/product', [App\Http\Controllers\AdminController::class,'post_edit_product'])->name('post.edit.product');
 Route::post('/post/edit/service', [App\Http\Controllers\AdminController::class,'post_edit_service'])->name('post.edit.service');
@@ -49,13 +60,29 @@ Route::get('/add/team/member', [App\Http\Controllers\AdminController::class,'add
 Route::post('/post/team/member', [App\Http\Controllers\AdminController::class,'post_team_member'])->name('post.team.member');
 Route::post('/post/service', [App\Http\Controllers\AdminController::class,'post_service'])->name('post.service');
 Route::post('/post/testimonial', [App\Http\Controllers\AdminController::class,'post_testimonial'])->name('post.testimonial');
+Route::post('/post/edited/contact/information', [App\Http\Controllers\AdminController::class,'post_edit_contact_information'])->name('post.edit.contact.information');
+Route::post('/post/newsletter', [App\Http\Controllers\AdminController::class,'post_newsletter'])->name('post.newsletter');
+Route::post('/post/blog/post', [App\Http\Controllers\AdminController::class,'post_blog_post'])->name('post.blog.post');
+Route::get('/add/innovation/videos', [App\Http\Controllers\AdminController::class,'add_innovation'])->name('add.innovation');
+Route::post('/post/innovation', [App\Http\Controllers\AdminController::class,'post_innovation'])->name('post.innovation.post');
+
 });
 
 // Site Routes
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\SiteController::class,'welcome'])->name('Welcome.us');
+Route::get('/admin', [App\Http\Controllers\SiteController::class,'admin'])->name('admin.redirect');
+
 Route::get('/about', [App\Http\Controllers\SiteController::class,'about_us'])->name('about.us');
 Route::get('/contact/us', [App\Http\Controllers\SiteController::class,'contact_us'])->name('contact.us');
 Route::get('/our/services', [App\Http\Controllers\SiteController::class,'our_services'])->name('our.services');
+Route::post('/post/suggestion/or/question/or/complain', [App\Http\Controllers\SiteController::class,'post_suggestion_complain_question'])->name('post.suggestion_complain_question');
+Route::get('/single/service/{uniqid}', [App\Http\Controllers\SiteController::class,'single_service'])->name('single.service');
+Route::post('/contact/us/post', [App\Http\Controllers\SiteController::class,'contact_us_post'])->name('contact.us.post');
+Route::post('/newsletter/subscribe', [App\Http\Controllers\SiteController::class,'newsletter_subscribe'])->name('newsletter.subscribe');
+Route::post('/password/email/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class,'password_email_reset'])->name('password.email.reset');
+Route::post('/password/update/post', [App\Http\Controllers\SiteController::class,'password_update_post'])->name('password.update.post');
+Route::get('password/update/form/{uniqid}', [App\Http\Controllers\SiteController::class,'password_update'])->name('password.update.get');
+Route::get('/blog/news', [App\Http\Controllers\SiteController::class,'blog_news'])->name('blog.news');
+Route::get('/innovation/videos', [App\Http\Controllers\SiteController::class,'our_videos'])->name('our.videos');
+

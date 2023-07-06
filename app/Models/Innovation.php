@@ -9,6 +9,6 @@ class Innovation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name ', 'description', 'link','media', 'type','uniqid'
+        'name', 'description', 'link', 'description','media', 'type','uniqid'
     ];
 }

@@ -39,7 +39,7 @@
                     <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                            <li class="nav-item"><a href="/service" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="/our/services" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
                             <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
                             <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
@@ -93,17 +93,7 @@
     <div class="online_chat">
         <a href="#mtexto" id="mchato"><i class="fas fa-comment-alt"></i></a>
     </div>
-    <div class="o-chatdisplay">
-        <div class="hd-chat" id="mtexto">
-            <a href="#mchato" class="chat-cancel">
-                <i class="fas fa-times"></i>
-            </a>
-            <h1>ONLINE CHAT</h1>
-        </div>
-        <div class="m-chat">
-
-        </div>
-    </div>
+    
      <!--book service-->
      <div class="bookform">
         <div class="bookfin kuanileft">
@@ -145,8 +135,8 @@
   <section class="service-form">
   
        <section class="intro-Outsourcing">
-              <p>/ Service -<span>/ Finance Literacy & Institution Linkages</span></p>
-                <a href="/service" class="bckbtn4" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
+              <p>/Our/Services -<span>/ Finance Literacy & Institution Linkages</span></p>
+                <a href="/our/services" class="bckbtn4" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
                         class="dr1"><i class="fas fa-door-closed"></i></span> Back to Service</a>
             </section>
             <section class="Outsourcing-detail-body">
@@ -233,7 +223,7 @@
             <h3>Quick Links</h3>
             <li><a href="/" class="home Hf"><i class="fas fa-long-arrow-right"></i>Home</a></li>
             <li><a href="/about" class="about Af"><i class="fas fa-long-arrow-right"></i>About</a></li>
-            <li><a href="/service" class="service Sf"><i class="fas fa-long-arrow-right"></i>Services</a></li>
+            <li><a href="/our/services" class="service Sf"><i class="fas fa-long-arrow-right"></i>Services</a></li>
             <li><a href="/videos" class="international If"><i class="fas fa-long-arrow-right"></i>Videos</a></li>
             <li><a href="/news" class="news Nf"><i class="fas fa-long-arrow-right"></i>News</a></li>
             <li><a href="/contact" class="contact Cf"><i class="fas fa-long-arrow-right"></i>Contact</a></li>

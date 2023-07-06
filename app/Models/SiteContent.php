@@ -9,6 +9,8 @@ class SiteContent extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'company_summary', 'snapshot_array', 'uniqid','vision','mission','innovationn_summary',"training_program_summary","our_goal"
+       'about_home_paragraph','about_us', 'snapshot_array', 'uniqid','vision','mission','innovationn_summary',"training_program_summary","our_goal"
     ];
+
+    protected $table = "site_content";
 }
