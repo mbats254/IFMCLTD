@@ -9,7 +9,7 @@
             <section class="introd">
                 <p class="hd-change">/ News<p1 class="altH"> ~> Newsletter</p1></p>
             </section>
-            <section class="cKaiga smoke_good">
+            <section class="cKaiga">
                 <div class="main-kaiga">
                     <div class="back-page"><a href="#"><i class="fas fa-long-arrow-left"></i> BACK</a></div>
                     
