@@ -24,7 +24,7 @@
                         <div class="blog-details">
                             <h4>{!! $post->title !!}</h4>
                             <p>{!!      substr($post->paragraph, 0, 50); !!}.</p>
-                            <a href="#" id={!! $post->uniqid!!} class="continue_reading" onclick="ChangePhase()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                            <a href="{!! route('single.news.post',[$post->uniqid]) !!}"  class="continue_reading" onclick="ChangePhase()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
                         </div>
                         <h1>{!! date_format($post->updated_at,"j<\s\up>S</\s\up> M Y") !!}</H1>
                     </div>
