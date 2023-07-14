@@ -7,6 +7,7 @@
             </section>
 <div class="up_vid">
 <!--video-section-->
+<?php $i=1; ?>
 @foreach($innovation_posts as $videos => $values )
             
                 <div class="yuk">
@@ -17,7 +18,7 @@
                         allowfullscreen></iframe>
                         <div class="vmpango">
                         
-                       <h1>1.</h1>
+                       <h1><?php echo $i++; ?>.</h1>
                         <div class="vdetail">
                         <h1>{!! $values->name !!}</h1>
                         <P>{!! $values->description !!}</P>

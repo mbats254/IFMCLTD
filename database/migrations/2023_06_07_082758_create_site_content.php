@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('company_summary');
             $table->string('snapshot_array');
             $table->string('uniqid');
-            $table->string('vision');
-            $table->string('mission');
+            $table->longtext('vision');
+            $table->longtext('mission');
             $table->string('innovationn_summary');
             $table->string('training_program_summary');
-            $table->text('our_goal');
+            $table->longtext('our_goal');
             $table->timestamps();
         });
     }

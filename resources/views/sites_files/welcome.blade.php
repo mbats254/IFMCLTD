@@ -56,7 +56,7 @@
             @foreach($snapshots as $snapshot=> $values )
             <div class="ip">
 
-                <div class="full-slider-box f-slide-1" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),url(/img/homeimg/customers.jpg);">
+                <div class="full-slider-box f-slide-1" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),url({!! $values->backdropImage !!});">
                     <div class="wabebe">
                         <div class="f-slider-text">
                             <span class="opnin">{!! $values->title !!}</span>
@@ -97,7 +97,7 @@
                         <div class="right aniright">
                             @foreach($services as $service => $values)
                             <div class="serv-icon si1">
-                                <a href="{{ route('single.service',$values->uniqid) }}" class="isize AAbtn ps-4 pe-4 pb-2" style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class={!! $values->icon  !!}></i></a>
+                                <a href="{{ route('single.service',$values->uniqid) }}" class="isize AAbtn ps-4 pe-4 pb-2" style="border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px;"><i class="{!! $values->icon  !!}"></i></a>
                                 <p class="serv-icon-name">{!!  $values->name !!}</p>
                             </div>
 
@@ -323,9 +323,9 @@
                     <div class="response-img">
                         <img src="{!!  $values->photo !!}" alt="">
                     </div>
-                    <span>{!!  $values->name !!} &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;</span>
+                    <span>@ {!!  $values->name !!} </span>
                     <p>
-                    {!! $values->comment !!}
+                   " {!! $values->comment !!} "
                     </p>
 
                 </div>

@@ -21,6 +21,7 @@
     <link href="/argon/vendor/nucleo/css/nucleo.css" rel="stylesheet">
      <link href="/argon/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
      <link type="text/css" href="/argon/css/argon.css?v=1.0.0" rel="stylesheet">
+     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
      <!-- Scripts -->
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -44,7 +45,7 @@
                             <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                             <li class="nav-item"><a href="/our/services" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="/innovation/videos" class="nav-link">Videos</a></li>
-                            <li class="nav-item"><a href="/blog/news" class="nav-link">News</a></li>
+                            <li class="nav-item"><a hreff="/blog/news" class="nav-link">News</a></li>
                             <li class="nav-item"><a href="/contact/us" class="nav-link">Contact</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -86,7 +87,10 @@
 
 @yield('content')
 <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "8371de7a8047fc1c85d2f6cfe7f2894b5fa757e93216b5060b3b540ddcf8f6c1", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script> 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77b7624e2dfc4f37e1e7731375bec6c922992ba6
 <footer>
     <div class="hfooter">
         <h3>Quick Links</h3>
