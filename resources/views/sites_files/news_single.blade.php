@@ -279,6 +279,7 @@
             </section>
             </section>
 </section>
+
 <script>
      //next & Previous
      var ondisplayDiv = 0;
@@ -366,6 +367,25 @@
             }
             relatedPage();
         }
+        
 </script>
 
+<?php $numa=0; ?>
+   <?php $numab=0; ?>
+   <?php $numac=0; ?>
+   <?php $numad=0; ?>
+    @foreach($datas as $jesu)
+    <script>
+        function Post{{$jesu->id}}(){
+            ondisplayDiv = <?php echo $numa++; ?>;
+            showPage();
+            dateDisplay = <?php echo $numab++; ?>;
+            datePage();
+            commentsDisplay = <?php echo $numac++; ?>;
+            commentPage();
+            relatedDisplay = <?php echo $numad++; ?>;
+            relatedPage();
+        }
+    </script>
+    @endforeach
 @endsection

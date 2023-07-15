@@ -49,4 +49,112 @@
            
         </section>
 </section>
+<script>
+     //next & Previous
+     var ondisplayDiv = 0;
+        function showPage() {
+            $(".subject-kaiga").hide();
+            $(".subject-kaiga:eq(" + ondisplayDiv + ")").show();
+        }
+        showPage()
+        var dateDisplay = 0;
+        function datePage() {
+            $(".recent-kaiga-details").hide();
+            $(".recent-kaiga-details:eq(" + dateDisplay + ")").show();
+        }
+        datePage()
+        var commentsDisplay = 0;
+        function commentPage() {
+            $(".rcomments-kaiga-details").hide();
+            $(".rcomments-kaiga-details:eq(" + commentsDisplay + ")").show();
+        }
+        commentPage()
+        var relatedDisplay = 0;
+        function relatedPage() {
+            $(".related-kaiga-body").hide();
+            $(".related-kaiga-body:eq(" + relatedDisplay + ")").show();
+        }
+        relatedPage()
+        
+        function bringNext() {
+            if (ondisplayDiv == $(".subject-kaiga").length - 1) {
+                ondisplayDiv = 0;
+            }
+            else {
+                ondisplayDiv++;
+            }
+            showPage();
+            if (dateDisplay == $(".recent-kaiga-details").length - 1) {
+                dateDisplay = 0;
+            }
+            else {
+                dateDisplay++;
+            }
+            datePage();
+            if (commentsDisplay == $(".rcomments-kaiga-details").length - 1) {
+                commentsDisplay = 0;
+            }
+            else {
+                commentsDisplay++;
+            }
+            commentPage();
+            if (relatedDisplay == $(".related-kaiga-body").length - 1) {
+                relatedDisplay = 0;
+            }
+            else {
+                relatedDisplay++;
+            }
+            relatedPage();
+        }
+        function bringPrev() {
+            if (ondisplayDiv == 0) {
+                ondisplayDiv = $(".subject-kaiga").length - 1;
+            }
+            else {
+                ondisplayDiv--;
+            }
+            showPage();
+            if (dateDisplay == 0) {
+                dateDisplay = $(".recent-kaiga-details").length - 1;
+            }
+            else {
+                dateDisplay--;
+            }
+            datePage();
+            if (commentsDisplay == 0) {
+                commentsDisplay = $(".rcomments-kaiga-details").length - 1;
+            }
+            else {
+                commentsDisplay--;
+            }
+            commentPage();
+            if (relatedDisplay == 0) {
+                relatedDisplay = $(".related-kaiga-body").length - 1;
+            }
+            else {
+                relatedDisplay--;
+            }
+            relatedPage();
+        }
+        
+</script>
+
+<?php $numa=0; ?>
+   <?php $numab=0; ?>
+   <?php $numac=0; ?>
+   <?php $numad=0; ?>
+    @foreach($datas as $jesu)
+    <script>
+        function Post{{$jesu->id}}(){
+            ondisplayDiv = <?php echo $numa++; ?>;
+            showPage();
+            dateDisplay = <?php echo $numab++; ?>;
+            datePage();
+            commentsDisplay = <?php echo $numac++; ?>;
+            commentPage();
+            relatedDisplay = <?php echo $numad++; ?>;
+            relatedPage();
+        }
+    </script>
+    @endforeach
 @endsection
