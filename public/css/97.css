@@ -173,48 +173,10 @@ color: rgb(0, 110, 255);
 .slider-text-container .f-slider-text .m-btn{
     margin-top: 31%;
 }
-.sufuri .f-slider-text strong font{
-    font-size: 2rem;
-}
-.sufuri .f-slider-text strong{
-    font-size:2.5rem;
-    
-}
 .wabebe .opnin{
     color: #a09d9d;
 }
-.zzero .f-slider-text span{
-    margin-left: 30%;
-}
-.zzero .f-slider-text .m-btn{
-    margin-top: 10%;
-    margin-left: 20%;
-}
-.zzero .f-slider-text strong{
-    text-align: center;
-    font-size:180%;
-}
-.Kaiga{
-    height: 100%;
-    width: 80%;
-    display: flex;
-    margin-left: 10%;
-    margin-top:7%;  
-}
-.sufuri{
-    height: 100%;
-    width: 80%;
-    display: flex;
-    margin-left: 3%;
-    margin-top:4%; 
-}
-.zzero{
-    height: 100%;
-    width: 80%;
-    display: flex;
-    margin-left: 15%;
-    margin-top:10%;
-}
+
 .slider-text-container{
     height: 100%;
     width: 80%;
@@ -252,14 +214,14 @@ color: rgb(0, 110, 255);
 }
 .wabebe .f-slider-text{
     text-align: center;
+    color: #FFFFFF;
+    
 }
 .wabebe .f-slider-text strong{
 font-size:2rem;
 }
-
-.sufuri .m-btn{
-    margin-right:15%;
-    margin-top: 35%;
+.wabebe .f-slider-text strong font{
+    color:rgb(0, 110, 255);
 }
 .f-btn{
     width: 170px;
@@ -293,8 +255,8 @@ font-size:2rem;
     margin-right: 5%;
     text-decoration: none;
 }
-.f-slider-text strong font{
-    color: rgb(0, 110, 255);
+.wabebe .f-slider-text strong font{
+    color: #FFFFFF;
 }
 .dot {
     cursor: pointer;
@@ -1582,8 +1544,7 @@ color:white;
 .nyuria{
     display: none;
 }
-.hd-change.ongeza-head::after{
-    content: ' ~> Newsletter';
+.hd-change .altH{
     color: rgb(0, 255, 251);
 }
 .cKaiga{
@@ -2594,9 +2555,7 @@ align-items: flex-start;
         margin-top:15px ;
         min-height: 35vh;
     }
-    .sufuri{
-        font-size: 10px;  
-    }
+    
     .feature .aboutstart .divai img {
         height: 250px;
     }
@@ -2636,13 +2595,6 @@ align-items: flex-start;
 }
 
 @media screen and (max-width:611px){
-   
-    .sufuri .f-slider-text strong{
-        font-size: 30%;
-    }
-    .sufuri .m-btn{
-        margin-right: 0;
-    }
     .blog .blog-box H1{
        
         font-size: 60px;
@@ -2676,20 +2628,7 @@ align-items: flex-start;
           font-size: 90%;
           
       }
-      .sufuri .f-slider-text span{
-          font-size: 60%;
-          line-height: 200%;
-      }
-      .sufuri .f-slider-text strong{
-          font-size: 60%;
-          line-height: 350%;
-      }
-      .sufuri .f-slider-text strong font{
-        font-size: 140%;
-    }
-    .sufuri .m-btn{
-        margin-top: 85%;
-    }
+      
     #s-mbtn{
         margin-top: 280px;
     }
@@ -2827,20 +2766,7 @@ align-items: flex-start;
         .m-btn .f-btn{
             font-weight: 800;
         } 
-        .sufuri .f-slider-text span{
-            font-size: 90%;
-            line-height: 200%;
-        }
-        .sufuri .f-slider-text strong{
-            font-size: 120%;
-            line-height: 300%;
-        }
-        .sufuri .f-slider-text strong font{
-          font-size: 140%;
-      }
-      .sufuri .m-btn{
-        margin-top: 550px;
-    }
+        
     .wabebe .m-btn{
         margin-top: 34%;
         margin-right: 0;

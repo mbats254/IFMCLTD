@@ -60,8 +60,9 @@
                     <div class="wabebe">
                         <div class="f-slider-text">
                             <span class="opnin">{!! $values->title !!}</span>
-                            {{-- <strong>Integrated Financial <br>Management <br>Consultants Limited<br>  --}}
-                                <font>{!! $values->accompanying_text !!}</font>
+                            <strong>
+                            {{-- Integrated Financial <br>Management <br>Consultants Limited<br>  --}}
+                                {!! $values->accompanying_text !!}
                             </strong>
                             <div class="m-btn">
                                 <a href="/our/services" class="f-slider-btn service Sf">Our Services</a>

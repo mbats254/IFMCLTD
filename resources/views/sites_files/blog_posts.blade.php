@@ -24,7 +24,7 @@
                         <div class="blog-details">
                             <h4>{!! $post->title !!}</h4>
                             <p>{!!      substr($post->paragraph, 0, 50); !!}.</p>
-                            <a href="#" id={!! $post->uniqid!!} class="continue_reading" onclick="ChangePhase()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                            <a href="{!! route('single.news.post',[$post->uniqid]) !!}"  class="continue_reading" onclick="ChangePhase()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
                         </div>
                         <h1>{!! date_format($post->updated_at,"j<\s\up>S</\s\up> M Y") !!}</H1>
                     </div>
@@ -46,169 +46,115 @@
                     <div class="old-nxt old-1"><a href="#">older <i class="fas fa-long-arrow-right"></i></a></div>
                 </div>
             </section>
-            <section class="cKaiga smoke_good">
-                <div class="main-kaiga">
-                    <div class="back-page"><a href="#"><i class="fas fa-long-arrow-left"></i> BACK</a></div>
-                    
-                    <div class="subject-class">
-                        <div class="hding"><h1>2022-01-23</h1></div>
-                        <div class="kaiga-img" id="tengana">
-                            <img class="fk" src="/img/newsimg/1.gif" alt="">
-                        </div>
-                        <div class="kaiga-dtail">
-                            <h4>END OF THE YEAR AUDIT</h4>
-                            <p>We just did it. We acquired maximum profit and were ranked top from comparison from competitors.</p>
-                        </div>
-                    </div>
-
-
-                  
-                    <div class="change-kaiga">
-                        <div class="tengana">
-                            <div class="tengana-left"><a href="#tengana" onclick="bringPrev()"><i
-                                        class="fas fa-long-arrow-left"></i> PREVIOUS</a></div>
-                            <div class="tengana-right"><a href="#tengana" onclick="bringNext()">NEXT <i
-                                        class="fas fa-long-arrow-right"></i></a></div>
-                        </div>
-                    </div>
-                    <div class="related-kaiga">
-                        <div class="related-kaiga-heading">Related Posts</div>
-                        <div class="related-kaiga-body">
-                        <div class="item1-kaiga">
-                                <div class="item1-kaiga-img">
-                                    <img src="/img/newsimg/2.jpg" alt="">
-                                </div>
-                                <div class="item1-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>14th February 2021</p>
-                                </div>
-                            </div>
-                            <div class="item2-kaiga">
-                                <div class="item2-kaiga-img">
-                                    <img src="/img/newsimg/kk.gif" alt="">
-                                </div>
-                                <div class="item2-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>23rd February 2021</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="related-kaiga-body">
-                            <div class="item1-kaiga">
-                                <div class="item1-kaiga-img">
-                                    <img src="/img/newsimg/1.gif" alt="">
-                                </div>
-                                <div class="item1-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>12th March 2022</p>
-                                </div>
-                            </div>
-                            <div class="item2-kaiga">
-                                <div class="item2-kaiga-img">
-                                    <img src="/img/newsimg/dt.jfif" alt="">
-                                </div>
-                                <div class="item2-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>21st February 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="related-kaiga-body">
-                            <div class="item1-kaiga">
-                                <div class="item1-kaiga-img">
-                                    <img src="/img/newsimg/kk4.gif" alt="">
-                                </div>
-                                <div class="item1-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>14th February 2022</p>
-                                </div>
-                            </div>
-                            <div class="item2-kaiga">
-                                <div class="item2-kaiga-img">
-                                    <img src="/img/newsimg/t.gif" alt="">
-                                </div>
-                                <div class="item2-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>5th July 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="related-kaiga-body">
-                            <div class="item1-kaiga">
-                                <div class="item1-kaiga-img">
-                                    <img src="/img/newsimg/kk3.gif" alt="">
-                                </div>
-                                <div class="item1-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>21st July 2022</p>
-                                </div>
-                            </div>
-                            <div class="item2-kaiga">
-                                <div class="item2-kaiga-img">
-                                    <img src="/img/newsimg/2.jpg" alt="">
-                                </div>
-                                <div class="item2-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>23rd February 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="related-kaiga-body">
-                            <div class="item1-kaiga">
-                                <div class="item1-kaiga-img">
-                                    <img src="/img/newsimg/kk5.gif" alt="">
-                                </div>
-                                <div class="item1-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>5th June 2022</p>
-                                </div>
-                            </div>
-                            <div class="item2-kaiga">
-                                <div class="item2-kaiga-img">
-                                    <img src="/img/newsimg/kk7.gif" alt="">
-                                </div>
-                                <div class="item2-kaiga-dtail">
-                                    <h4>25 Years of Greatness</h4>
-                                    <p>5th March 2022</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mini-kaiga">
-                    <div class="recent-kaiga">
-                        <div class="recent-kaiga-heading">Recent Posts</div>
-                        <div class="recent-kaiga-details">
-                            <p><a href="#" onclick="WillyPaul()">12-04-2022: 25 YEARS OF GREATNESS</a></p>
-
-                        </div>
-                        <div class="recent-kaiga-details">
-                            <p><a href="#" onclick="Avril()">21-11-2022: 25 YEARS OF GREATNESS</a></p>
-                           
-                    </div>
-                    <div class="rcomments-kaiga">
-                        <div class="rcomments-kaiga-heading">Recent Comments</div>
-                        <div class="rcomments-kaiga-details">
-                            <p>"What is our current V.A.T"</p>
-                           
-                        </div>
-                       
-                        <div class="rcomments-kaiga-details">
-                            <p>"Hapa cynthia rutherock ni moto wa pazi"</p>
-                         
-                        </div>
-                    </div>
-                    <div class="archive-kaiga">
-                        <div class="archive-kaiga-heading">Archive</div>
-                        <div class="archive-kaiga-details">
-                           
-                            <p><a href="#"  onclick="ChangePhase()">January 2022 <i class="fas fa-long-arrow-right"></i></a></p>
-                           
-                        </div>
-                    </div>
-      
-                </div>
-            </section>
+           
         </section>
 </section>
+<script>
+     //next & Previous
+     var ondisplayDiv = 0;
+        function showPage() {
+            $(".subject-kaiga").hide();
+            $(".subject-kaiga:eq(" + ondisplayDiv + ")").show();
+        }
+        showPage()
+        var dateDisplay = 0;
+        function datePage() {
+            $(".recent-kaiga-details").hide();
+            $(".recent-kaiga-details:eq(" + dateDisplay + ")").show();
+        }
+        datePage()
+        var commentsDisplay = 0;
+        function commentPage() {
+            $(".rcomments-kaiga-details").hide();
+            $(".rcomments-kaiga-details:eq(" + commentsDisplay + ")").show();
+        }
+        commentPage()
+        var relatedDisplay = 0;
+        function relatedPage() {
+            $(".related-kaiga-body").hide();
+            $(".related-kaiga-body:eq(" + relatedDisplay + ")").show();
+        }
+        relatedPage()
+        
+        function bringNext() {
+            if (ondisplayDiv == $(".subject-kaiga").length - 1) {
+                ondisplayDiv = 0;
+            }
+            else {
+                ondisplayDiv++;
+            }
+            showPage();
+            if (dateDisplay == $(".recent-kaiga-details").length - 1) {
+                dateDisplay = 0;
+            }
+            else {
+                dateDisplay++;
+            }
+            datePage();
+            if (commentsDisplay == $(".rcomments-kaiga-details").length - 1) {
+                commentsDisplay = 0;
+            }
+            else {
+                commentsDisplay++;
+            }
+            commentPage();
+            if (relatedDisplay == $(".related-kaiga-body").length - 1) {
+                relatedDisplay = 0;
+            }
+            else {
+                relatedDisplay++;
+            }
+            relatedPage();
+        }
+        function bringPrev() {
+            if (ondisplayDiv == 0) {
+                ondisplayDiv = $(".subject-kaiga").length - 1;
+            }
+            else {
+                ondisplayDiv--;
+            }
+            showPage();
+            if (dateDisplay == 0) {
+                dateDisplay = $(".recent-kaiga-details").length - 1;
+            }
+            else {
+                dateDisplay--;
+            }
+            datePage();
+            if (commentsDisplay == 0) {
+                commentsDisplay = $(".rcomments-kaiga-details").length - 1;
+            }
+            else {
+                commentsDisplay--;
+            }
+            commentPage();
+            if (relatedDisplay == 0) {
+                relatedDisplay = $(".related-kaiga-body").length - 1;
+            }
+            else {
+                relatedDisplay--;
+            }
+            relatedPage();
+        }
+        
+</script>
+
+<?php $numa=0; ?>
+   <?php $numab=0; ?>
+   <?php $numac=0; ?>
+   <?php $numad=0; ?>
+    @foreach($datas as $jesu)
+    <script>
+        function Post{{$jesu->id}}(){
+            ondisplayDiv = <?php echo $numa++; ?>;
+            showPage();
+            dateDisplay = <?php echo $numab++; ?>;
+            datePage();
+            commentsDisplay = <?php echo $numac++; ?>;
+            commentPage();
+            relatedDisplay = <?php echo $numad++; ?>;
+            relatedPage();
+        }
+    </script>
+    @endforeach
 @endsection

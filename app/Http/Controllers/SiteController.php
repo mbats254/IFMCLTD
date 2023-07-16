@@ -27,6 +27,13 @@ use Illuminate\Support\Facades\Log;
 class SiteController extends Controller
 {
 
+    public function single_news_post(Request $request)
+    {
+        $news_post  = Blog::where('uniqid','=',$request->uniqid)->first();
+        return view('sites_files.news_single',compact('news_post'));
+        dd($request->uniqid);
+    }
+
     public function our_videos(Request $request)
     {
         $innovation_posts = Innovation::get();

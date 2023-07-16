@@ -84,5 +84,6 @@ Route::post('/password/email/reset', [App\Http\Controllers\Auth\ForgotPasswordCo
 Route::post('/password/update/post', [App\Http\Controllers\SiteController::class,'password_update_post'])->name('password.update.post');
 Route::get('password/update/form/{uniqid}', [App\Http\Controllers\SiteController::class,'password_update'])->name('password.update.get');
 Route::get('/blog/news', [App\Http\Controllers\SiteController::class,'blog_news'])->name('blog.news');
+Route::get('/single/news/post/{uniqid}', [App\Http\Controllers\SiteController::class,'single_news_post'])->name('single.news.post');
 Route::get('/innovation/videos', [App\Http\Controllers\SiteController::class,'our_videos'])->name('our.videos');
 

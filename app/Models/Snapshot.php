@@ -10,7 +10,7 @@ class Snapshot extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title','backdropImage', 'accompanying_text', 'uniqid',
+        'title','backdropImage', 'accompanying_text', 'tect','uniqid',
      ];
 
 }
