@@ -61,7 +61,6 @@
                         <div class="f-slider-text">
                             <span class="opnin">{!! $values->title !!}</span>
                             <strong>
-                            {{-- Integrated Financial <br>Management <br>Consultants Limited<br>  --}}
                                 {!! $values->accompanying_text !!}
                             </strong>
                             <div class="m-btn">
