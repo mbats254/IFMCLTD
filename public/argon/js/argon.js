@@ -104,10 +104,6 @@ var FormControl = (function() {
 	var $input = $('.form-control');
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 	// Methods
 
 	function init($this) {
@@ -953,11 +949,6 @@ var OrdersChart = (function() {
 							}
 
 							content += '<span class="popover-body-value">' + yLabel + '</span>';
-<<<<<<< HEAD
-
-=======
-							
->>>>>>> origin/master
 							return content;
 						}
 					}
@@ -1063,7 +1054,6 @@ var SalesChart = (function() {
 	}
 
 })();
-<<<<<<< HEAD
 
 
 // multistep
@@ -1203,5 +1193,3 @@ function checknumberpages(){
 //     alert('Number of Pages:',count );
 // }
 }
-=======
->>>>>>> origin/master

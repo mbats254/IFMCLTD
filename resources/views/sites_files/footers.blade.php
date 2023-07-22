@@ -87,10 +87,7 @@
 
 @yield('content')
 <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "8371de7a8047fc1c85d2f6cfe7f2894b5fa757e93216b5060b3b540ddcf8f6c1", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script> 
-<<<<<<< HEAD
 
-=======
->>>>>>> 77b7624e2dfc4f37e1e7731375bec6c922992ba6
 <footer>
     <div class="hfooter">
         <h3>Quick Links</h3>
@@ -98,7 +95,7 @@
         <li><a href="/about" class="about Af"><i class="fas fa-long-arrow-right"></i>About</a></li>
         <li><a href="/our/services" class="service Sf"><i class="fas fa-long-arrow-right"></i>Services</a></li>
         <li><a href="/innovation/videoss" class="international If"><i class="fas fa-long-arrow-right"></i>Videos</a></li>
-        <li><a href="/blog/news" class="news Nf"><i class="fas fa-long-arrow-right"></i>News</a></li>
+        <li><a href="/blog/news"><i class="fas fa-long-arrow-right"></i>News</a></li>
         <li><a href="/contact/us" class="contact Cf"><i class="fas fa-long-arrow-right"></i>Contact</a></li>
     </div>
     <div class="hfooter">
