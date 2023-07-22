@@ -225,6 +225,13 @@ $(document).ready(function(){
     $(document).on('click', '.chat-cancel,.notification,.Search', function () {
         $('.o-chatdisplay').removeClass('comethou')
     });
+    /*--video background--*/
+    $(document).on('click', '.z14', function () {
+            $('.vid-bg').addClass('vid-active')
+        });
+        $(document).on('click', '.vid-cancel', function () {
+            $('.vid-bg').removeClass('vid-active')
+        });
       //reveal
       window.addEventListener('scroll', reveal);
     function reveal() {
