@@ -30,8 +30,8 @@ class SiteController extends Controller
     public function single_news_post(Request $request)
     {
         $news_post  = Blog::where('uniqid','=',$request->uniqid)->first();
-        return view('sites_files.news_single',compact('news_post'));
-        dd($request->uniqid);
+        return view('newsPage.news_single',compact('news_post'));
+        // dd($request->uniqid);
     }
 
     public function our_videos(Request $request)
@@ -188,7 +188,7 @@ class SiteController extends Controller
     {
         $blog_posts = Blog::get();
         // dd($blog_posts);
-        return view('sites_files.blog_posts',compact('blog_posts'));
+        return view('newsPage.blog_posts',compact('blog_posts'));
         // return view('news',compact('blog_posts'));
     }
 
