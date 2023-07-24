@@ -45,7 +45,7 @@
                             <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                             <li class="nav-item"><a href="/our/services" class="nav-link">Services</a></li>
                             <li class="nav-item"><a href="/innovation/videos" class="nav-link">Videos</a></li>
-                            <li class="nav-item"><a href="/blog/news" class="nav-link">News</a></li>
+                            <li class="nav-item"><a hreff="/blog/news" class="nav-link">News</a></li>
                             <li class="nav-item"><a href="/contact/us" class="nav-link">Contact</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
@@ -87,6 +87,7 @@
 
 @yield('content')
 <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "8371de7a8047fc1c85d2f6cfe7f2894b5fa757e93216b5060b3b540ddcf8f6c1", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script> 
+
 <footer>
     <div class="hfooter">
         <h3>Quick Links</h3>
@@ -94,7 +95,7 @@
         <li><a href="/about" class="about Af"><i class="fas fa-long-arrow-right"></i>About</a></li>
         <li><a href="/our/services" class="service Sf"><i class="fas fa-long-arrow-right"></i>Services</a></li>
         <li><a href="/innovation/videoss" class="international If"><i class="fas fa-long-arrow-right"></i>Videos</a></li>
-        <li><a href="/blog/news" class="news Nf"><i class="fas fa-long-arrow-right"></i>News</a></li>
+        <li><a href="/blog/news"><i class="fas fa-long-arrow-right"></i>News</a></li>
         <li><a href="/contact/us" class="contact Cf"><i class="fas fa-long-arrow-right"></i>Contact</a></li>
     </div>
     <div class="hfooter">
@@ -381,6 +382,162 @@ $(document).ready(function(){
  <script src="/argon/js/argon.js?v=1.0.0"></script>
  <script src="/argon/js/toastr/toastr.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+ <script src="jQuery.js"></script>
+ <script src="triggerscript.js"></script>
+ <script type="text/javascript">
+     //back
+     $(document).on('click', '.back-page', function () {
+         $('.blog').addClass('page1-active').removeClass('kkyt')
+     });
+     $(document).on('click', '.back-page', function () {
+         $('.page-numbers').addClass('weeknd-active').removeClass('kkyt')
+     });
+     $(document).on('click', '.back-page', function () {
+         $('.year-change').addClass('yr-pg1-active').removeClass('kkyt')
+     });
+     $(document).on('click', '.back-page', function () {
+         $('.hd-change').removeClass('ongeza-head')
+     });
+     $(document).on('click', '.back-page', function () {
+         $('.cKaiga').addClass('smoke_good')
+     });
+             //next & Previous
+             var ondisplayDiv = 0;
+     function showPage() {
+         $(".subject-kaiga").hide();
+         $(".subject-kaiga:eq(" + ondisplayDiv + ")").show();
+     }
+     showPage()
+     var dateDisplay = 0;
+     function datePage() {
+         $(".recent-kaiga-details").hide();
+         $(".recent-kaiga-details:eq(" + dateDisplay + ")").show();
+     }
+     datePage()
+     var commentsDisplay = 0;
+     function commentPage() {
+         $(".rcomments-kaiga-details").hide();
+         $(".rcomments-kaiga-details:eq(" + commentsDisplay + ")").show();
+     }
+     commentPage()
+     var relatedDisplay = 0;
+     function relatedPage() {
+         $(".related-kaiga-body").hide();
+         $(".related-kaiga-body:eq(" + relatedDisplay + ")").show();
+     }
+     relatedPage()
+     
+     function bringNext() {
+         if (ondisplayDiv == $(".subject-kaiga").length - 1) {
+             ondisplayDiv = 0;
+         }
+         else {
+             ondisplayDiv++;
+         }
+         showPage();
+         if (dateDisplay == $(".recent-kaiga-details").length - 1) {
+             dateDisplay = 0;
+         }
+         else {
+             dateDisplay++;
+         }
+         datePage();
+         if (commentsDisplay == $(".rcomments-kaiga-details").length - 1) {
+             commentsDisplay = 0;
+         }
+         else {
+             commentsDisplay++;
+         }
+         commentPage();
+         if (relatedDisplay == $(".related-kaiga-body").length - 1) {
+             relatedDisplay = 0;
+         }
+         else {
+             relatedDisplay++;
+         }
+         relatedPage();
+     }
+     function bringPrev() {
+         if (ondisplayDiv == 0) {
+             ondisplayDiv = $(".subject-kaiga").length - 1;
+         }
+         else {
+             ondisplayDiv--;
+         }
+         showPage();
+         if (dateDisplay == 0) {
+             dateDisplay = $(".recent-kaiga-details").length - 1;
+         }
+         else {
+             dateDisplay--;
+         }
+         datePage();
+         if (commentsDisplay == 0) {
+             commentsDisplay = $(".rcomments-kaiga-details").length - 1;
+         }
+         else {
+             commentsDisplay--;
+         }
+         commentPage();
+         if (relatedDisplay == 0) {
+             relatedDisplay = $(".related-kaiga-body").length - 1;
+         }
+         else {
+             relatedDisplay--;
+         }
+         relatedPage();
+     }
+     function Post1(){
+         ondisplayDiv = 0;
+         showPage();
+         dateDisplay = 0;
+         datePage();
+         commentsDisplay = 0;
+         commentPage();
+         relatedDisplay = 0;
+         relatedPage();
+     }
+     function Post2(){
+         ondisplayDiv = 1;
+         showPage();
+         dateDisplay = 1;
+         datePage();
+         commentsDisplay = 1;
+         commentPage();
+         relatedDisplay = 1;
+         relatedPage();
+     }
+     function Post3(){
+         ondisplayDiv = 2;
+         showPage();
+         dateDisplay = 1;
+         datePage();
+         commentsDisplay = 2;
+         commentPage();
+         relatedDisplay = 2;
+         relatedPage();
+     }
+     function Post4(){
+         ondisplayDiv = 3;
+         showPage();
+         dateDisplay = 1;
+         datePage();
+         commentsDisplay = 3;
+         commentPage();
+         relatedDisplay = 3;
+         relatedPage();
+     }
+     function Post5(){
+         ondisplayDiv = 4;
+         showPage();
+         dateDisplay = 1;
+         datePage();
+         commentsDisplay = 4;
+         commentPage();
+         relatedDisplay = 4;
+         relatedPage();
+     }
+ </script>
 </body>
 </body>
 </html>

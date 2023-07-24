@@ -323,10 +323,7 @@ label
     display: inline-block;
 
     margin-bottom: .5rem;
-<<<<<<< HEAD
     color: #8cc63f;
-=======
->>>>>>> origin/master
 }
 
 button
@@ -21967,7 +21964,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
 .col-md-6 {
     padding-bottom: 30px;
 }
-<<<<<<< HEAD
 
 select.invalid {
     background-color: #ffdddd;
@@ -21986,5 +21982,3 @@ textarea.invalid {
 	z-index: 9999;
 	background: 50% 50% no-repeat rgba(0,0,0,0.8);
 }
-=======
->>>>>>> origin/new_final

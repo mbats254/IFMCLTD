@@ -11,7 +11,7 @@
   <section class="service-form">
  
             <section class="introd">
-                <p>/ Our Services </p>
+                <p>/Our/Services </p>
             </section>
             <section class="service-head-body">
                 <div class="srv-heading">
@@ -22,7 +22,7 @@
                 <section class="sv-body">
                 @foreach($services as $service =>$values)
                     <div class="serv-icon si1">
-                        <a href="{{ route('single.service',$values->uniqid) }}" class="isize"><i class="{!! $values->icon !!}"></i>
+                        <a href="{{ route('single.service',$values->uniqid) }}" class="isize"><i class={!! $values->icon !!}></i>
                         <p class="serv-icon-name">{!!  $values->name !!}</p></a>
                     </div>
 

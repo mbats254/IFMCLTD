@@ -49,7 +49,7 @@ class ContactUsIFMCLTD extends Notification
                     ->line(new HtmlString('Subject: <b>'.$this->contact_us->subject.'</b>'))
                     ->line(new HtmlString('Message: <b>'.$this->contact_us->message.'</b>'))
                     // ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->line('Thank you for contacting me.!');
     }
 
     /**

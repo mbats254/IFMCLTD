@@ -78,7 +78,7 @@
                 @foreach($team_members as $member =>$values )
                     <div>
                         <img src="{!! $values->photo !!}" alt="">
-                        <p><span>{!! $values->name !!}</span>{!! $values->position !!}<br>phone: {!! $values->phone_number !!}<br>Email:{!! $values->email !!}</p>
+                        <p><span>{!! $values->name !!}</span>{!! $values->position !!}<br>phone: {!! $values->phone_number !!}<br>Email:{!! $values->email !!}/p>
                     </div>
                     @endforeach
                  

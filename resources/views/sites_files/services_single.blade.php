@@ -42,7 +42,7 @@
   <section class="service-form">
   
             <section class="intro-Audit">
-                <p>/ Our Services -<span>/ {!!  $single_service->name !!}</span></p>
+                <p>/Our/Services -<span>/ {!!  $single_service->name !!}</span></p>
                 <a href="/our/services" class="bckbtn1" style="text-decoration: none;"><span class="dr2"><i class="fas fa-door-open"></i></span><span
                         class="dr1"><i class="fas fa-door-closed"></i></span> Back to Service</a>
             </section>

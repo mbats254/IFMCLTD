@@ -13,45 +13,93 @@
             <section class="blog page1-active">
                 <section class="page1">
                 
-                        @foreach ($blog_posts as $post)
-                            
                         
                   
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img src={!! $post->photo !!} alt="">
+                            <img src="1.gif" alt="">
                         </div>
                         <div class="blog-details">
-                            <h4>{!! $post->title !!}</h4>
-                            <p>{!!      substr($post->paragraph, 0, 50); !!}.</p>
-                            <a href="{!! route('single.news.post',[$post->uniqid]) !!}"  class="continue_reading" onclick="ChangePhase()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                            <h4>END OF THE YEAR AUDIT</h4>
+                            <p>We made it..</p>
+                            <a href="news_single.html" class="kiburn" onclick="Post1()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
                         </div>
-                        <h1>{!! date_format($post->updated_at,"j<\s\up>S</\s\up> M Y") !!}</H1>
+                        <H1>2022-01-23</H1>
                     </div>
 
-                    @endforeach
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="2.jpg" alt="">
+                        </div>
+                        <div class="blog-details">
+                            <h4>THE TAKE OFF</h4>
+                            <p>We celebrate how far our company has grown from our humble backgrounds to</p>
+                            <a href="news_single.html" class="kiburn" onclick="Post2()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                        </div>
+                        <H1>2022-01-21</H1>
+                    </div>
+
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="3.gif" alt="">
+                        </div>
+                        <div class="blog-details">
+                            <h4>BOOMING PERIOD</h4>
+                            <p>We celebrate how far our company has grown from our humble backgrounds to </p>
+                            <a href="news_single.html" class="kiburn" onclick="Post3()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                        </div>
+                        <H1>2022-01-14</H1>
+                    </div>
+
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="kk3.gif" alt="">
+                        </div>
+                        <div class="blog-details">
+                            <h4>TESTING PERIOD</h4>
+                            <p>We celebrate how far our company has grown from our humble backgrounds to</p>
+                            <a href="news_single.html" class="kiburn" onclick="Post4()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                        </div>
+                        <H1>2022-01-12</H1>
+                    </div>
+
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="kk4.gif" alt="">
+                        </div>
+                        <div class="blog-details">
+                            <h4>START OF THE YEAR AUDIT</h4>
+                            <p>We celebrate how far our company has grown from our humble backgrounds to </p>
+                            <a href="news_single.html" class="kiburn" onclick="Post5()">CONTINUE READING <i class="fas fa-long-arrow-right"></i></a>
+                        </div>
+                        <H1>2022-01-05</H1>
+                    </div>
               
                 </section>
             </section>
-            <section class="page-numbers weeknd-active">
-                <ul class="weeknd">
-                    <li class=""><a href="/news" class="pg1 pantha paranoid">Jan</a></li>
-
-                </ul>
-            </section>
-            <section class="year-change yr-pg1-active">
-                <div class="yr-pg1">
-                    <li><a href="#" class="god6 paranoid y22">2022</a></li>
-                  
-                    <div class="old-nxt old-1"><a href="#">older <i class="fas fa-long-arrow-right"></i></a></div>
-                </div>
-            </section>
-           
         </section>
 </section>
-<script>
-     //next & Previous
-     var ondisplayDiv = 0;
+
+   
+    <script type="text/javascript">
+        //back
+        $(document).on('click', '.back-page', function () {
+            $('.blog').addClass('page1-active').removeClass('kkyt')
+        });
+        $(document).on('click', '.back-page', function () {
+            $('.page-numbers').addClass('weeknd-active').removeClass('kkyt')
+        });
+        $(document).on('click', '.back-page', function () {
+            $('.year-change').addClass('yr-pg1-active').removeClass('kkyt')
+        });
+        $(document).on('click', '.back-page', function () {
+            $('.hd-change').removeClass('ongeza-head')
+        });
+        $(document).on('click', '.back-page', function () {
+            $('.cKaiga').addClass('smoke_good')
+        });
+                //next & Previous
+                var ondisplayDiv = 0;
         function showPage() {
             $(".subject-kaiga").hide();
             $(".subject-kaiga:eq(" + ondisplayDiv + ")").show();
@@ -136,8 +184,56 @@
             }
             relatedPage();
         }
-        
-</script>
-
-
-@endsection
+        function Post1(){
+            ondisplayDiv = 0;
+            showPage();
+            dateDisplay = 0;
+            datePage();
+            commentsDisplay = 0;
+            commentPage();
+            relatedDisplay = 0;
+            relatedPage();
+        }
+        function Post2(){
+            ondisplayDiv = 1;
+            showPage();
+            dateDisplay = 1;
+            datePage();
+            commentsDisplay = 1;
+            commentPage();
+            relatedDisplay = 1;
+            relatedPage();
+        }
+        function Post3(){
+            ondisplayDiv = 2;
+            showPage();
+            dateDisplay = 1;
+            datePage();
+            commentsDisplay = 2;
+            commentPage();
+            relatedDisplay = 2;
+            relatedPage();
+        }
+        function Post4(){
+            ondisplayDiv = 3;
+            showPage();
+            dateDisplay = 1;
+            datePage();
+            commentsDisplay = 3;
+            commentPage();
+            relatedDisplay = 3;
+            relatedPage();
+        }
+        function Post5(){
+            ondisplayDiv = 4;
+            showPage();
+            dateDisplay = 1;
+            datePage();
+            commentsDisplay = 4;
+            commentPage();
+            relatedDisplay = 4;
+            relatedPage();
+        }
+    </script>
+    @endsection
+   
